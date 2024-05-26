@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Single Elimination Tournament Bracket Generator</title>
+<style>
+    /* Add your CSS styles here */
+    .bracket-container {
+        display: flex;
+    }
+
+    .round {
+        margin-right: 20px;
+    }
+
+    .match {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+<h1>Single Elimination Tournament Bracket Generator</h1>
+<form id="tournamentForm">
+    <label for="numTeams">Number of Teams:</label>
+    <input type="number" id="numTeams" name="numTeams" min="2" required>
+    <button type="submit">Generate Bracket</button>
+</form>
+<table id="teamTable" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Team ID</th>
+            <th>Team Name</th>
+            <th>Team Description</th>
+            <th>No. of Players</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+            <tr>
+                <th scope="row">202</th>
+                <td>Yoda</td>
+                <td>gg</td>
+                <td>5</td>
+            </tr>
+     
+            <tr>
+                <th scope="row">252</th>
+                <td>toyota</td>
+                <td>gg</td>
+                <td>5</td>
+            </tr>
+     
+            <tr>
+                <th scope="row">253</th>
+                <td>12</td>
+                <td>12</td>
+                <td>5</td>
+            </tr>
+     
+            <tr>
+                <th scope="row">254</th>
+                <td>aa</td>
+                <td>aa</td>
+                <td>5</td>
+            </tr>
+      
+        
+    </tbody>
+</table> 
+<div id="bracketContainer" class="bracket-container"></div>
+
+<script>
+document.getElementById('tournamentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var numTeams = parseInt(document.getElementById('numTeams').value);
+    generateBracket(numTeams);
+});
+
+function generateBracket(numTeams) {
+    var bracketContainer = document.getElementById('bracketContainer');
+    bracketContainer.innerHTML = ''; // Clear previous brackets
+
+    // Calculate the number of rounds
+    var numRounds = Math.ceil(Math.log2(numTeams));
+
+    // Generate HTML for bracket
+    var html = '';
+
+    for (var round = 1; round <= numRounds; round++) {
+        html += '<div class="round">';
+        var numMatches = Math.pow(2, numRounds - round);
+        for (var match = 1; match <= numMatches; match++) {
+            html += '<div class="match">';
+            if (round === numRounds) {
+                html += '<select class="team-select" id="final_match_team' + match + '">';
+            } else {
+                html += '<select class="team-select" id="round_' + round + '_match_' + match + '">';
+            }
+            html += '<option value="">Select Team</option>';
+            var teamTable = document.getElementById('teamTable'); 
+            for (var i = 1; i <= numTeams; i++) {
+                var teamName = teamTable.rows[i].cells[0].innerText;
+                html += '<option value="' + teamName + '">' + teamName + '</option>';
+            }
+            html += '</select>';
+            html += '</div>';
+        }
+        html += '</div>';
+    }
+    bracketContainer.innerHTML = html;
+
+ 
+}
+   // Update options based on selections and disable selected team in other select options
+   for (var round = 1; round < numRounds; round++) {
+        var currentRoundMatches = document.querySelectorAll('.round:nth-child(' + round + ') .match');
+        for (var match = 0; match < currentRoundMatches.length; match++) {
+            currentRoundMatches[match].addEventListener('change', function() {
+                var selectedTeam = this.querySelector('select').value;
+                var currentMatchSelects = this.querySelectorAll('select');
+                for (var i = 0; i < currentMatchSelects.length; i++) {
+                    if (currentMatchSelects[i].value !== selectedTeam && currentMatchSelects[i].value !== '') {
+                        currentMatchSelects[i].disabled = true;
+                    }
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>
