@@ -1,9 +1,7 @@
 package com.TRunner.Controllers;
 
 import java.security.Principal;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,31 +29,69 @@ public class ManageContoller {
 	@Autowired
 	TeamRepository teamRepository;
 
-	@GetMapping("/manageTournament/{tid}")
-	public String getManager(@PathVariable(value = "tid") int tid , Model model,Principal principal) {
-		Tournament  tournament = tRepository.findById(tid).get();
-		if(tournament.getUser().getEmail().equals(principal.getName())) { 
-			model.addAttribute("tournament",tournament);
-//			tournament.getTeams().forEach(System.out::println);
-			List<Team> teams=teamRepository.getAllTeams(tournament);
-//			teams.forEach(System.out::println);
-			model.addAttribute("teams",teams);
-			return "managetm";			
+	@GetMapping("/manageTournament/{tid}/details")
+	public String getManagerDetails(@PathVariable(value = "tid") int tid, Model model, Principal principal) {
+		Tournament tournament = tRepository.findById(tid).get();
+		if (tournament.getUser().getEmail().equals(principal.getName())) {
+			model.addAttribute("tournament", tournament);
+			return "managetm_details";
 		}
 		return "";
 	}
-	
+
+	@GetMapping("/manageTournament/{tid}/participants")
+	public String getManagerParticipants(@PathVariable(value = "tid") int tid, Model model, Principal principal) {
+		Tournament tournament = tRepository.findById(tid).get();
+		if (tournament.getUser().getEmail().equals(principal.getName())) {
+			model.addAttribute("tournament", tournament);
+			// tournament.getTeams().forEach(System.out::println);
+			List<Team> teams = teamRepository.getAllTeams(tournament);
+			// teams.forEach(System.out::println);
+			model.addAttribute("teams", teams);
+			return "managetm_participant";
+		}
+		return "";
+	}
+
+	@GetMapping("/manageTournament/{tid}/matches")
+	public String getManagerMatches(@PathVariable(value = "tid") int tid, Model model, Principal principal) {
+		Tournament tournament = tRepository.findById(tid).get();
+		if (tournament.getUser().getEmail().equals(principal.getName())) {
+			model.addAttribute("tournament", tournament);
+			// tournament.getTeams().forEach(System.out::println);
+			List<Team> teams = teamRepository.getAllTeams(tournament);
+			// teams.forEach(System.out::println);
+			model.addAttribute("teams", teams);
+			return "managetm_matches";
+		}
+		return "";
+	}
+
+	@GetMapping("/manageTournament/{tid}/result")
+	public String getManagerResult(@PathVariable(value = "tid") int tid, Model model, Principal principal) {
+		Tournament tournament = tRepository.findById(tid).get();
+		if (tournament.getUser().getEmail().equals(principal.getName())) {
+			model.addAttribute("tournament", tournament);
+			// tournament.getTeams().forEach(System.out::println);
+			List<Team> teams = teamRepository.getAllTeams(tournament);
+			// teams.forEach(System.out::println);
+			model.addAttribute("teams", teams);
+			return "managetm_result";
+		}
+		return "";
+	}
+
 	@PostMapping("/updateTournament")
-	public RedirectView updateDetail(@ModelAttribute Tournament tournament,Principal principal,Model modal) {
-		int tid=tournament.getTid();
-		if(tournament!=null) {
+	public RedirectView updateDetail(@ModelAttribute Tournament tournament, Principal principal, Model modal) {
+		int tid = tournament.getTid();
+		if (tournament != null) {
 			tournament.setUser(userRepository.findByEmail(principal.getName()));
 			tRepository.save(tournament);
 		}
-//		System.out.println(tournament.getGameName() + tournament.getGametype());
-		modal.addAttribute("tournament",tournament);
- 
-		return new RedirectView("/user/manageTournament/"+tid);
+		// System.out.println(tournament.getGameName() + tournament.getGametype());
+		modal.addAttribute("tournament", tournament);
+
+		return new RedirectView("/user/manageTournament/" + tid);
 	}
-	
+
 }
