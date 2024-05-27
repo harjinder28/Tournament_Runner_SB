@@ -1,0 +1,240 @@
+@charset "UTF-8";
+
+
+nav{
+	background-color: rgb(51, 51, 51);
+	color: #fff;
+    position: sticky;
+    top: 0%;
+    z-index: 2;
+}
+nav .navcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+nav div h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}  
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+nav ul li a:hover{
+    background-color: #4CAF50;
+    border:1px solid black;
+    border-radius: 10px;
+   
+}
+.sideNav{
+    background-color: #c9dfc7;
+    top: 15%;
+}
+.sideNav ul li{
+    display: flex;
+    flex-direction: column;
+}
+
+.sideNav ul li a:hover{
+    background-color: #4CAF50;
+    border:1px solid black;
+    border-radius: 5px;
+   
+}
+.sideNav ul{
+    margin: 2px;
+}
+.sideNav ul a{
+    color: #000;
+    text-decoration: none;
+
+}
+.sideNav ul a li{
+    margin: 20px 5px;
+    padding: 5px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.containerTop {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    
+
+}
+
+.sidebar {
+    width: 20%;
+    /* height: 0cap; */
+    background-color: #c9dfc7;
+    padding: 20px;
+    border-right: 2px solid black;
+    /* position: static; */
+    
+}
+#update-btn{
+    margin-right: 30%;
+    align-self: center;
+    width: 80px;
+    height: 40px;
+    background-color: #50b3e0;
+}
+#update-btn:hover{
+    background-color: #58c559;
+}
+#save-btn{
+    margin-right: 30%;
+    align-self: center;
+    width: 80px;
+    height: 40px;
+    background-color: #58c559;
+}
+#save-btn:hover{
+    background-color: #86a37a;
+}
+
+.sidebar-menu {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.navcontainer h1{
+    border-bottom:4px solid #4CAF50;
+}
+.menu-item {
+    padding: 10px;
+    margin-top: 2rem;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    
+    border-radius: 4px;
+    border: 0.5px solid #c0c0c0;
+}
+.item{
+    background-color: #4CAF50;
+}
+.menu-item:hover{
+    background-color: #676b69;
+}
+
+.content {
+    width: 100%;
+    /* flex: 1; */
+    /* height: 100%; */
+    padding: 20px;
+    background-color: #ebdfdf;
+    /* border-left: 2px solid black; */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    
+    display: block;
+    /* background-color: #d8a80b; */
+    width: 100%;
+    height: 100%;
+    /* height: 0cap; */
+    
+}
+
+/*.tabactive { 
+    display: block;
+}*/
+
+#addTeamPlayers{
+    justify-content: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+/* Add your existing CSS styles */
+
+/* Multitab styles */
+.multitab .tab-header {
+    display: flex;
+}
+
+.multitab .tab-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.multitab .tab-item:hover,
+.multitab .tab-item.tabactive {
+    background-color: #bdbdbd;
+}
+
+.multitab .tab-content {
+    margin-top: 20px;
+}
+
+.multitab .tab {
+    display: none;
+}
+
+.tab.tabactive {
+    display: block;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+.btnsv {
+	background-color: #ff0000;
+}
+.btnupd{
+	background-color: #4CAF50;
+}
+.input-field {
+    width: 70%;
+    margin-right: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #887d7de3;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+select.input-field {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+textarea.input-field {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    resize: vertical;
+}

@@ -5,8 +5,8 @@
  <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <html>
 <head>
-<title>GMT - Manage Tournament</title>
-<link rel="stylesheet" type="text/css" href="/css/managetm.css">
+<title>Manage Tournament - Details</title>
+<link rel="stylesheet" type="text/css" href="/css/managetm_details.css">
 
 
 
@@ -26,34 +26,16 @@
 	<div class="containerTop">
 
 		<div class="sidebar">
-		<nav>
+		<nav class="sideNav">
 			<ul class="sidebar-menu">
-				<li id="o1" class="menu-item active item"
-					onclick="showSection('overview','o1')">Overview</li>
-				<li id="o2" class="menu-item"
-					onclick="showSection('addTeamPlayers','o2')">Team and Players</li>
-				<li id="o3" class="menu-item"
-					onclick="showSection('setupBracket','o3')">Bracket</li>
-				<li id="o4" class="menu-item"
-					onclick="showSection('tournamentResults','o4')">Results</li>
-				<!-- Add more menu items as needed -->
+				<a href="/user/manageTournament/${tid}/details"><li id="" class="menu-item active item" >Details</li></a>
+				<a href="/user/manageTournament/${tid}/participants"><li id="" class="menu-item" >Participants</li></a>
+				<a href="/user/manageTournament/${tid}/matches"><li id="" class="menu-item" >Matches</li></a>
+				<a href="/user/manageTournament/${tid}/result"><li id="" class="menu-item" >Result</li></a>
 			</ul>
 			</nav>
 		</div>
-		<%-- <div class="sidebar">
-			<ul class="sidebar-menu">
-				<li id="o1" class="menu-item active item"
-					onclick="showSection('overview','o1')">Overview</li>
-				<li id="o2" class="menu-item"
-					onclick="showSection('addTeamPlayers','o2')">Team and Players</li>
-				<li id="o3" class="menu-item"
-					onclick="showSection('setupBracket','o3')">Bracket</li>
-				<li id="o4" class="menu-item"
-					onclick="showSection('tournamentResults','o4')">Results</li>
-				<!-- Add more menu items as needed -->
-			</ul>
-		</div> --%>
-		
+
 		<div class="content">
 			<section id="Details">
 			<div id="overview" class="section active">
@@ -144,106 +126,9 @@
 			</div>
 		</section>
 
-
-		<section id="Participant">
-			<div id="addTeamPlayers" class="section">
-				<h2 style="text-align:center">Add Team</h2>
-					
-						<div id="team">
-							<div class="teamTableDiv">
-								<table id="teamTable" class="table table-striped">
-									<thead>
-										<tr>
-											<th>Team ID</th>
-											<th>Team Name</th>
-											<th>Team Description</th>
-											<th>No. of Players</th>
-										</tr>
-									</thead>
-									<tbody>
-									<c:forEach items="${teams}" var="team">
-                							<tr>
-                							    <th scope="row" >${team.teamId}</th>
-                							    <td>${team.teamName}</td>
-                							    <td>${team.teamDescription}</td>
-                							    <td>${team.teamSize}</td>
-											</tr>
- 									</c:forEach> 
-										<%-- <%@include file="Alert_JSPs/dynamicManage.jsp"%> --%>
-									</tbody>
-								</table>
-							</div>
-							<div class="tableButton" style="display: flex;justify-content: center;">
-							<button  id="addTeam" onclick="showAddTeamModal()">+ Add
-								Team</button>
-							</div>
-						</div>
-			</div>
-				<!-- Popup modal for adding a team -->
-			<div class="overlayTeam hiddendiv">
-					<div class="popup-content">
-						<h2>Add Team</h2>
-						<form id="addTeamForm" action="/user/manageTournament/addTeam/${tournament.tid}"
-							method="post">
-							<input type="text" placeholder="Team Name" id="teamName"
-								class="input-field" name="teamName"> <input type="text"
-								placeholder="Team Description" id="teamDescription"
-								class="input-field" name="teamDescription"> <input
-								type="text" placeholder="Number Of Players" id="noOfPlayer"
-								class="input-field" name="teamSize">
-							<div>
-								<input type="submit" id="savebtn" value="Save"> <input
-									type="button" id="closebtn" value="close" class="close-btn"
-									onclick="hideAddTeamModal()">
-							</div>
-						</form>
-					</div>
-			</div>
-
-			<div id="setupBracket" class="section">
-				<h2>Setup Tournament Bracket</h2>
-				<form method="POST" id="bracketForm" action="">
-					<label for="numOfTeams">Number of Teams:</label> <input
-						type="number" id="numOfTeams" id="numOfTeams" class="input-field"
-						disabled value='${tournament.tournamentNoOfTeams}' required>
-					<label for="tournamentType">Tournament Type:</label> <select
-						id="tournamentType" id="tournamentType" required
-						class="input-field">
-						<option value="Single Elimination">Single Elimination</option>
-						<option value="Double Elimination">Double Elimination</option>
-						<option value="Round Robin">Round Robin</option>
-					</select>
-
-					<button type="submit" id="setupBracket" >Setup Bracket</button>
-				</form>
-
-				<div class="bracket-container" id="bracketContainer"></div>
-			</div>
-		</section>
-
-
-		<section id="Result">
-			<div id="tournamentResults" class="section">
-				<h2>Results</h2>
-				<div class="resultTableDiv">
-					<table>
-						<thead>
-							<tr>
-								<th>Team ID</th>
-								<th>Team Name</th>
-								<th>Description</th>
-								<th>Number of Players</th>
-							</tr>
-						</thead>
-						<tbody>
-
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</section>
 		</div>
 	</div>
+
 	<script src="/js/managetm.js" type="text/javascript"></script>
 
 </body>
