@@ -19,11 +19,14 @@ public class Match {
 	int team2Ponts;
 	@OneToOne
 	Team winnerTeam;
+	@OneToOne
+	Tournament tournament;
 	public Match() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public Match(int matchId, Team team1, int team1Ponts, Team team2, int team2Ponts, Team winnerTeam) {
+	
+	public Match(int matchId, Team team1, int team1Ponts, Team team2, int team2Ponts, Team winnerTeam,
+			Tournament tournament) {
 		super();
 		this.matchId = matchId;
 		this.team1 = team1;
@@ -31,7 +34,11 @@ public class Match {
 		this.team2 = team2;
 		this.team2Ponts = team2Ponts;
 		this.winnerTeam = winnerTeam;
+		this.tournament = tournament;
 	}
+
+
+
 	public int getMatchId() {
 		return matchId;
 	}
@@ -68,11 +75,21 @@ public class Match {
 	public void setWinnerTeam(Team winnerTeam) {
 		this.winnerTeam = winnerTeam;
 	}
+
+	public Tournament getTournament() {
+		return tournament;
+	}
+
+	public void setTournament(Tournament tournament) {
+		this.tournament = tournament;
+	}
+
 	@Override
 	public String toString() {
 		return "Match [matchId=" + matchId + ", team1=" + team1 + ", team1Ponts=" + team1Ponts + ", team2=" + team2
-				+ ", team2Ponts=" + team2Ponts + ", winnerTeam=" + winnerTeam + "]";
+				+ ", team2Ponts=" + team2Ponts + ", winnerTeam=" + winnerTeam + ", tournament=" + tournament + "]";
 	}
+
 	
 	
 }

@@ -54,7 +54,7 @@
                     <td>${tournament.gameName}</td>
                     <td>${tournament.tournamentType}</td>
                     <td>${tournament.startDate}</td>
-                    <td><a href="/user/manageTournament/${tournament.tid}"><button name="manage" style="background-color: #4CAF50">Manage</button></a>
+                    <td><a href="/user/manageTournament/${tournament.tid}/details"><button name="manage" style="background-color: #4CAF50">Manage</button></a>
                         <button name="delete" type="submit" method="post" action="/user/deleteTournament/${tournament.tid}" value="Delete" style="background-color: red">Delete</button></td>
                 </tr>
  </c:forEach> 
