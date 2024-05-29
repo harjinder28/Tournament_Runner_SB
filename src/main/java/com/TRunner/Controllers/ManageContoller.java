@@ -91,7 +91,7 @@ public class ManageContoller {
 		// System.out.println(tournament.getGameName() + tournament.getGametype());
 		modal.addAttribute("tournament", tournament);
 
-		return new RedirectView("/user/manageTournament/" + tid);
+		return new RedirectView("/user/manageTournament/" + tid+"/details");
 	}
 
 }

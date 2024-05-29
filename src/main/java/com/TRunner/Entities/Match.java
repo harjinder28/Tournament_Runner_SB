@@ -13,9 +13,11 @@ public class Match {
 	int matchId;
 	@OneToOne
 	Team team1;
+	
 	int team1Ponts;
 	@OneToOne
 	Team team2;
+	
 	int team2Ponts;
 	@OneToOne
 	Team winnerTeam;

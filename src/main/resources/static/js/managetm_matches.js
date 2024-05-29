@@ -1,96 +1,63 @@
-document.getElementById('bracketForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    var numTeams = parseInt(document.getElementById('numOfTeams').value);
-    generateTournamentBracket(numTeams,"Single Elimination");
-});
-// function generateTournamentBracket(numTeams, tournamentType) {
-//     // Calculate the number of rounds based on the number of teams
-//     var numRounds = Math.ceil(Math.log2(numTeams))+1;
+// document.getElementById('bracketForm').addEventListener('submit', function(event) {
+//     event.preventDefault();
+//     generateTournamentBracket(numTeams,"Single Elimination");
+// });
+var numTeams = parseInt(document.getElementById("numOfTeams").value);
 
-//     const bracket = document.getElementById("bracketContainer");
-    
-//     bracket.innerHTML+="<table><th>";
-//     for (let x = 1; x <= numRounds; x++) {
-//         if(x===numRounds){bracket.innerHTML+=`<tr><td>Winner</td></tr>`; break;}
-//         bracket.innerHTML+=`<tr><td>Round ${x}</td></tr>`;
-//     }
-//     bracket.innerHTML+="</th>";
-//     // Generate the matches for each round
-//     var numMatches = Math.ceil(numTeams / Math.pow(2, numRounds));
-//     for (let row = 1; row < ; row++){
-//         const element = array[row];
-       
-//     }
-//     // for (let r = 1; r <= numRounds; r++) {
-//     //     let round=document.createElement("div");
-//     //     round.className=`rounds`;
-//     //     let html="";
-//     //     // Generate the matches for the current round
-    
-//             }
-//             round.innerHTML=html;
-//         }
+var numRounds = Math.ceil(Math.log2(numTeams)) + 1;
 
+const bracket = document.getElementById("bracketContainer");
 
-//         bracket.appendChild(round);
-//     }
+// bracket.innerHTML+="<table><th>";
+let html = "";
+html += `<div class='roundsName' style="display:flex">`;
+for (let x = 1; x <= numRounds; x++) {
+  html += `<div class="roundName" style="margin:AUTO;margin-top:0px;font-weight: bold;text-decoration:underline;margin-left:40px">Round ${x}</div>`;
+}
+html += "</div>";
 
-// }
-// function generateTournamentBracket(numTeams, tournamentType) {
-//     // Calculate the number of rounds based on the number of teams
-//     var numRounds = Math.ceil(Math.log2(numTeams))+1;
+html += `<div class='bracket' style="display:flex;width:100%">`;
 
-//     const bracket = document.getElementById("bracketContainer");
-    
+for (let col = 1; col <= numRounds; col++) {
+  // html+=`<h6 class="roundName" style="margin:AUTO;margin-top:0px;font-weight: bold;text-decoration:underline;colspan:1">Round ${col}</h6>`;
+  var numMatches = Math.ceil(numTeams / Math.pow(2, col));
+  html += `<div class="round" id="round${col}" style="display:grid;align-items:center;width:inherit;margin-left:10px;">`;
+  for (let row = 1; row <= numMatches; row++) {
+    // html+=`<a href="/user/manageTournament/tid/match/${col}/${row}">`;
+    html += `<div class="match" id="match${col}-${row}" style="colspan:${
+      col * 2
+    };border-left:1px solid black;border-bottom:1px solid black;border-top:1px solid black;">`;
+    html += `<div class="team" id="team1-${col}-${row}" >`;
+    html += `<ul style="margin:10px 5px;">`;
+    html += `<li style="display:inline-flex"><div class="teamName">Null</div><div class="teamScore">NUll</div></li><br>`;
+    html += `   VS   <br>`;
+    html += `<li style="display:inline-flex"><div class="teamName">Null</div><div class="teamScore">NUll</div></li>`;
+    html += `</ul>`;
+    html += `</div>`;
+    html += `</div>`;
+    // html+=`</a>`;
+  }
+  html += `</div>`;
+}
+html += `</div>`;
 
-//     // Generate the matches for each round
-//     for (let r = 1; r <= numRounds; r++) {
-//         var numMatches = Math.ceil(numTeams / Math.pow(2, r));
-//         let round=document.createElement("div");
-//         round.className=`round${round}`;
-//         let html="";
-//         // Generate the matches for the current round
-//         for (let match = 1; match <= numMatches; match++) {
-//             if(round===numRounds){//final round only 1 div for showing winner
-//                 html+=`<div class="match" id="match${round}-${match}">`;
-//                 html+=`<div class="team" id="team1-${round}-${match}">`;
-//                 html+=`<ul>`;
-//                 html+=`<li><div class="teamName>Null</div><div class="teamScore">NUll</div></li>`;
-//                 html+=`</ul>`;
-//                 html+=`</div>`;
-//                 round.innerHTML=html;
-                
-//             }
-//             else{
-//             // Create a div element for the match
-//             html+=`<div class="match" id="match${round}-${match}" style="grid-row=${(match%2)+1}">`;
-
-//             // Create two div elements for the team names
-//             html+=`<div class="team" id="team1-${round}-${match}">`;
-//             html+=`<ul>`;
-//             html+=`<li><div class="teamName>Null</div><div class="teamScore">NUll</div></li>`;
-//             html+=`<li><div class="teamName>Null</div><div class="teamScore">NUll</div></li>`;
-//             html+=`</ul>`;
-//             html+=`</div>`;
-            
-//             html+=`<div class="team" id="team2-${round}-${match}">`;
-//             html+=`<ul>`;
-//             html+=`<li><div class="teamName>Null</div><div class="teamScore">NUll</div></li>`;
-//             html+=`<li><div class="teamName>Null</div><div class="teamScore">NUll</div></li>`;
-//             html+=`</ul>`;
-//             html+=`</div>`;
-//             }
-//             round.innerHTML=html;
-//         }
-
-
-//         bracket.appendChild(round);
-//     }
-
+bracket.innerHTML = html;
+// function showAddTeamModal() {
+//   var modal = document.querySelector(".overlayMatch");
+//   modal.classList.remove("hiddendiv");
 // }
 
-// // Example usage
-// const numTeams = 8;
-// const tournamentType = 'single elimination';
-// const bracket = generateTournamentBracket(numTeams, tournamentType);
-// console.log(bracket);
+// // Function to hide the Add Team popup modal
+// function hideAddTeamModal() {
+//   var modal = document.querySelector(".overlayMatch");
+//   modal.classList.add("hiddendiv");
+// }
+// for (let col = 1; col <=  numRounds; col++){// html+=`<h6 class="roundName" style="margin:AUTO;margin-top:0px;font-weight: bold;text-decoration:underline;colspan:1">Round ${col}</h6>`;
+//     var numMatches = Math.ceil(numTeams / Math.pow(2, col)); html+=`<div class="round" id="round${col}" style="display:grid;align-items:center;width:inherit;margin-left:10px;">`;
+//     for (let row = 1; row <= numMatches; row++) {
+//         let match=document.getElementById(`match${col}-${row}`);
+//         match.addEventListener('click',function(){
+//             alert(`Match ${col}-${row} clicked`);
+//         });
+//     }
+// }
