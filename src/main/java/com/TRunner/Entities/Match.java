@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 
-@Entity
+@Entity(name = "TeamMatch")
 public class Match {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
