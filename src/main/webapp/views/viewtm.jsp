@@ -17,6 +17,7 @@
 <script src="js/viewtm.js"></script> 
 </head>
 <body>
+    
 	<nav>
         <div class="navcontainer">
             <h1>GMT</h1>

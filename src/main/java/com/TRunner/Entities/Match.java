@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity(name = "TeamMatch")
@@ -14,33 +16,37 @@ public class Match {
 	@OneToOne
 	Team team1;
 	
-	int team1Ponts;
+	int team1score;
 	@OneToOne
 	Team team2;
 	
-	int team2Ponts;
+	int team2score;
+	
+	String matchDate;
+	
+	String matchTime;
+	
 	@OneToOne
 	Team winnerTeam;
-	@OneToOne
+//	@OneToOne
+	@ManyToOne
 	Tournament tournament;
 	public Match() {
 		super();
 	}
-	
-	public Match(int matchId, Team team1, int team1Ponts, Team team2, int team2Ponts, Team winnerTeam,
-			Tournament tournament) {
+	public Match(int matchId, Team team1, int team1score, Team team2, int team2score, String matchDate,
+			String matchTime, Team winnerTeam, Tournament tournament) {
 		super();
 		this.matchId = matchId;
 		this.team1 = team1;
-		this.team1Ponts = team1Ponts;
+		this.team1score = team1score;
 		this.team2 = team2;
-		this.team2Ponts = team2Ponts;
+		this.team2score = team2score;
+		this.matchDate = matchDate;
+		this.matchTime = matchTime;
 		this.winnerTeam = winnerTeam;
 		this.tournament = tournament;
 	}
-
-
-
 	public int getMatchId() {
 		return matchId;
 	}
@@ -53,11 +59,11 @@ public class Match {
 	public void setTeam1(Team team1) {
 		this.team1 = team1;
 	}
-	public int getTeam1Ponts() {
-		return team1Ponts;
+	public int getTeam1score() {
+		return team1score;
 	}
-	public void setTeam1Ponts(int team1Ponts) {
-		this.team1Ponts = team1Ponts;
+	public void setTeam1score(int team1score) {
+		this.team1score = team1score;
 	}
 	public Team getTeam2() {
 		return team2;
@@ -65,11 +71,23 @@ public class Match {
 	public void setTeam2(Team team2) {
 		this.team2 = team2;
 	}
-	public int getTeam2Ponts() {
-		return team2Ponts;
+	public int getTeam2score() {
+		return team2score;
 	}
-	public void setTeam2Ponts(int team2Ponts) {
-		this.team2Ponts = team2Ponts;
+	public void setTeam2score(int team2score) {
+		this.team2score = team2score;
+	}
+	public String getMatchDate() {
+		return matchDate;
+	}
+	public void setMatchDate(String matchDate) {
+		this.matchDate = matchDate;
+	}
+	public String getMatchTime() {
+		return matchTime;
+	}
+	public void setMatchTime(String matchTime) {
+		this.matchTime = matchTime;
 	}
 	public Team getWinnerTeam() {
 		return winnerTeam;
@@ -77,21 +95,18 @@ public class Match {
 	public void setWinnerTeam(Team winnerTeam) {
 		this.winnerTeam = winnerTeam;
 	}
-
 	public Tournament getTournament() {
 		return tournament;
 	}
-
 	public void setTournament(Tournament tournament) {
 		this.tournament = tournament;
 	}
-
 	@Override
 	public String toString() {
-		return "Match [matchId=" + matchId + ", team1=" + team1 + ", team1Ponts=" + team1Ponts + ", team2=" + team2
-				+ ", team2Ponts=" + team2Ponts + ", winnerTeam=" + winnerTeam + ", tournament=" + tournament + "]";
+		return "Match [matchId=" + matchId + ", team1=" + team1 + ", team1score=" + team1score + ", team2=" + team2
+				+ ", team2score=" + team2score + ", matchDate=" + matchDate + ", matchTime=" + matchTime
+				+ ", winnerTeam=" + winnerTeam + ", tournament=" + tournament + "]";
 	}
-
 	
 	
 }

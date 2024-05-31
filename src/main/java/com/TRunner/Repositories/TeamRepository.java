@@ -12,7 +12,9 @@ import com.TRunner.Entities.Tournament;
 
 @Repository
 public interface TeamRepository extends JpaRepository<Team, Integer> {
+	public Team  findByTeamNameAndTournament(String teamName, Tournament tournament);
+	public Team  findByTeamId(int teamId);
 	
-@Query("select t From Team t WHERE t.tournament =:tid")
-public List<Team> getAllTeams(@Param("tid") Tournament tournament);
+	@Query("select t From Team t WHERE t.tournament =:tid")
+	public List<Team> getAllTeams(@Param("tid") Tournament tournament);
 }

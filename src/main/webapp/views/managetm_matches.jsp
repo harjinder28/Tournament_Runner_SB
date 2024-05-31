@@ -12,6 +12,7 @@
 
 </head>
 <body>
+<input type="hidden" id="tid" value="${tournament.tid}"></input>
 	<nav>
 		<div class="navcontainer">
 			<h1>GMT</h1>
@@ -52,9 +53,10 @@
 						<option value="Round Robin">Round Robin</option>
 					</select>
 
-					<button type="submit" id="setupBracket" >Setup Bracket</button>
+					<%-- <button type="submit" id="setupBracket" >Setup Bracket</button> --%>
 				</form>
-
+ 			    <a href="/user/manageTournament/${tid}/addMatch"><button type="button" id="" >Add Match</button>	</a>
+	
 				<div class="bracket-container" id="bracketContainer"></div>
 			</div>
 		</section>
