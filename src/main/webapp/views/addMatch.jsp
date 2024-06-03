@@ -21,6 +21,20 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
+                        <label for="roundNumber">Round Number</label> <input type="number"
+                            class="form-control" id="roundNumber" name="roundNumber" value="${round}" readonly >
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="matchNumber">Match Number</label> <input type="number"
+                            class="form-control" id="matchNumber" name="matchNumber" value="${match}" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label for="team1">Team 1</label> <select class="form-control"
                             id="team1" name="team1">
                             <option value="">Select Team</option>

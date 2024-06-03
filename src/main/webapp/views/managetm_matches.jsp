@@ -55,7 +55,7 @@
 
 					<%-- <button type="submit" id="setupBracket" >Setup Bracket</button> --%>
 				</form>
- 			    <a href="/user/manageTournament/${tid}/addMatch"><button type="button" id="" >Add Match</button>	</a>
+ 			    <%-- <a href="/user/manageTournament/${tid}/addMatch"><button type="button" id="" >Add Match</button>	</a> --%>
 	
 				<div class="bracket-container" id="bracketContainer"></div>
 			</div>

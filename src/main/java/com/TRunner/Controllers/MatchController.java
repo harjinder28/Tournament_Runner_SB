@@ -32,17 +32,19 @@ public class MatchController {
 	TournamentRepository tournamentRepository;
 	@Autowired
 	TeamRepository teamRepository;
-	@GetMapping("/manageTournament/{tId}/addMatch")
-	public String addMatch(Model model,@PathVariable("tId") int tId) {
+	@GetMapping("/manageTournament/{tId}/addMatch/{round}/{match}")
+	public String addMatch(Model model,@PathVariable("tId") int tId,@PathVariable("round") int round,@PathVariable("match") int match) {
 		Tournament tournament = tournamentRepository.findById(tId).get();
 		List<Team> teams=teamRepository.getAllTeams(tournament);
 		model.addAttribute("tId", tId);
+		model.addAttribute("match", match);
+		model.addAttribute("round", round);
 		model.addAttribute("teams", teams);
 		return "addMatch";
 	}
 	
 	@PostMapping("/manageTournament/{tId}/addMatch")
-	public String postMethodName(@RequestParam int team1,@RequestParam int team2,@RequestParam int team1score,@RequestParam int team2score,@ModelAttribute Match match ,@PathVariable("tId") int tid) {
+	public String postMethodName(@ModelAttribute Match match,@RequestParam int team1,@RequestParam int team2,@RequestParam int team1score,@RequestParam int team2score ,@PathVariable("tId") int tid) {
 		Tournament tournament = tournamentRepository.findById(tid).get();
 		match.setTournament(tournament);
 //		Team team1=teamRepository.findByTeamNameAndTournament(team1Name,tournament);

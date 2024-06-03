@@ -13,20 +13,23 @@ public class Match {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int matchId;
-	@OneToOne
+	@ManyToOne
 	Team team1;
 	
 	int team1score;
-	@OneToOne
+	@ManyToOne
 	Team team2;
 	
 	int team2score;
+	
+	int matchNumber;
+	int roundNumber;
 	
 	String matchDate;
 	
 	String matchTime;
 	
-	@OneToOne
+	@ManyToOne
 	Team winnerTeam;
 //	@OneToOne
 	@ManyToOne
@@ -34,19 +37,23 @@ public class Match {
 	public Match() {
 		super();
 	}
-	public Match(int matchId, Team team1, int team1score, Team team2, int team2score, String matchDate,
-			String matchTime, Team winnerTeam, Tournament tournament) {
+
+	public Match(int matchId, Team team1, int team1score, Team team2, int team2score, int matchNumber, int roundNumber,
+			String matchDate, String matchTime, Team winnerTeam, Tournament tournament) {
 		super();
 		this.matchId = matchId;
 		this.team1 = team1;
 		this.team1score = team1score;
 		this.team2 = team2;
 		this.team2score = team2score;
+		this.matchNumber = matchNumber;
+		this.roundNumber = roundNumber;
 		this.matchDate = matchDate;
 		this.matchTime = matchTime;
 		this.winnerTeam = winnerTeam;
 		this.tournament = tournament;
 	}
+
 	public int getMatchId() {
 		return matchId;
 	}
@@ -101,12 +108,28 @@ public class Match {
 	public void setTournament(Tournament tournament) {
 		this.tournament = tournament;
 	}
+	
+	public int getMatchNumber() {
+		return matchNumber;
+	}
+	public void setMatchNumber(int matchNumber) {
+		this.matchNumber = matchNumber;
+	}
+	public int getRoundNumber() {
+		return roundNumber;
+	}
+	public void setRoundNumber(int roundNumber) {
+		this.roundNumber = roundNumber;
+	}
+
 	@Override
 	public String toString() {
 		return "Match [matchId=" + matchId + ", team1=" + team1 + ", team1score=" + team1score + ", team2=" + team2
-				+ ", team2score=" + team2score + ", matchDate=" + matchDate + ", matchTime=" + matchTime
-				+ ", winnerTeam=" + winnerTeam + ", tournament=" + tournament + "]";
+				+ ", team2score=" + team2score + ", matchNumber=" + matchNumber + ", roundNumber=" + roundNumber
+				+ ", matchDate=" + matchDate + ", matchTime=" + matchTime + ", winnerTeam=" + winnerTeam
+				+ ", tournament=" + tournament + "]";
 	}
+	
 	
 	
 }

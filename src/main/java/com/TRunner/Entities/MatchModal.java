@@ -11,14 +11,18 @@ public class MatchModal {
 	String matchDate;
 	String matchTime;
 	String winnerTeamName;
+	int matchNumber;
+	
+	int roundNumber;
 	
 	public MatchModal() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
+
+
 	public MatchModal(int matchId, String team1Name, int team1score, String team2Name, int team2score, String matchDate,
-			String matchTime, String winnerTeamName) {
+			String matchTime, String winnerTeamName, int matchNumber, int roundNumber) {
 		super();
 		this.matchId = matchId;
 		this.team1Name = team1Name;
@@ -28,7 +32,11 @@ public class MatchModal {
 		this.matchDate = matchDate;
 		this.matchTime = matchTime;
 		this.winnerTeamName = winnerTeamName;
+		this.matchNumber = matchNumber;
+		this.roundNumber = roundNumber;
 	}
+
+
 
 	public int getMatchId() {
 		return matchId;
@@ -93,6 +101,22 @@ public class MatchModal {
 	public void setWinnerTeamName(String winnerTeamName) {
 		this.winnerTeamName = winnerTeamName;
 	}
+	public int getMatchNumber() {
+		return matchNumber;
+	}
+
+	public void setMatchNumber(int matchNumber) {
+		this.matchNumber = matchNumber;
+	}
+
+	public int getRoundNumber() {
+		return roundNumber;
+	}
+
+	public void setRoundNumber(int roundNumber) {
+		this.roundNumber = roundNumber;
+	}
+
 
 	@Override
 	public String toString() {

@@ -36,7 +36,7 @@ public class MatchDataController {
 			matches.add(new MatchModal(
 					match.getMatchId(), match.getTeam1().getTeamName(), match.getTeam1score()
 					, match.getTeam2().getTeamName() ,match.getTeam2score(), match.getMatchDate()
-					, match.getMatchTime(), match.getWinnerTeam().getTeamName())); 
+					, match.getMatchTime(), match.getWinnerTeam().getTeamName(),match.getMatchNumber(),match.getRoundNumber())); 
 		} 
 		return matches;
 	}

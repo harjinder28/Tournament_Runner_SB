@@ -33,13 +33,27 @@ const tid = document.getElementById("tid").value;
 fetch("/user/manageTournament/" + tid + "/getMatches")
   .then((response) => response.json())
   .then((data) => {
-    const matches = data;
+    const matchData = data;
+    const matches = {};
+
+    matchData.forEach((match) => {
+      const roundNumber = match.roundNumber;
+      const matchNumber = match.matchNumber;
+
+      if (!matches[roundNumber]) {
+        matches[roundNumber] = {};
+      }
+
+      matches[roundNumber][matchNumber] = match;
+    });
+
+    console.log(matches);
     generateTournamentBracket(numTeams, "Single Elimination", matches);
   });
 
 // bracket.innerHTML+="<table><th>";
 function generateTournamentBracket(numTeams, type, matches) {
-  console.log(matches);
+  // console.log(matches);
 
   let html = "";
   html += `<div class='roundsName' style="display:flex">`;
@@ -60,8 +74,9 @@ function generateTournamentBracket(numTeams, type, matches) {
         col * 2
       };border-left:1px solid black;border-bottom:1px solid black;border-top:1px solid black;">`;
       html += `<div class="team" id="team1-${col}-${row}" >`;
-      if (matches.length > 0) {
-        let match = matches.pop();
+      if (matches["matchNumber"] === row && matches["roundNumber"] === col) {
+        // let match = matches.pop();
+        match = matches[];
         html += `<ul style="margin:10px 5px;padding-left:10px;border:1px solid black;box-shadow:2px 5px lightgreen;">`;
         html += `<li style="display:inline-flex;font-weight: bold;"><div class="teamName">${match.team1Name}</div><div class="teamScore" style="margin-left:10px;">Score-${match.team1score}</div></li><br>`;
         html += `   VS   <br>`;
@@ -71,7 +86,8 @@ function generateTournamentBracket(numTeams, type, matches) {
         html += `<ul style="margin:10px 5px;">`;
         html += `<li style="display:inline-flex"><div class="teamName">Null</div><div class="teamScore">NUll</div></li><br>`;
         html += `   VS   <br>`;
-        html += `<li style="display:inline-flex"><div class="teamName">Null</div><div class="teamScore">NUll</div></li>`;
+        html += `<li style="display:inline-flex"><div class="teamName">Null</div><div class="teamScore">NUll</div></li><br>`;
+        html += `<li style="display:inline-flex"><div class="addMatch"><a href="/user/manageTournament/${tid}/addMatch/${col}/${row}"><button type="button" id="addMatch" >Add Match</button>	</a></div></li>`;
         html += `</ul>`;
       }
       html += `</div>`;
