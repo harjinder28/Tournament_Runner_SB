@@ -74,9 +74,8 @@ function generateTournamentBracket(numTeams, type, matches) {
         col * 2
       };border-left:1px solid black;border-bottom:1px solid black;border-top:1px solid black;">`;
       html += `<div class="team" id="team1-${col}-${row}" >`;
-      if (matches["matchNumber"] === row && matches["roundNumber"] === col) {
-        // let match = matches.pop();
-        match = matches[];
+      if (matches && matches[col] && matches[col][row]) {
+        const match = matches[col][row];
         html += `<ul style="margin:10px 5px;padding-left:10px;border:1px solid black;box-shadow:2px 5px lightgreen;">`;
         html += `<li style="display:inline-flex;font-weight: bold;"><div class="teamName">${match.team1Name}</div><div class="teamScore" style="margin-left:10px;">Score-${match.team1score}</div></li><br>`;
         html += `   VS   <br>`;
