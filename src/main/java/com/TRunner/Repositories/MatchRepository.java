@@ -12,4 +12,5 @@ import com.TRunner.Entities.Tournament;
 @Repository
 public interface MatchRepository extends JpaRepository<Match, Integer>{
 	public List<Match> findByTournament(Tournament tournament);
+	public Match  findByTournamentAndRoundNumberAndMatchNumber(Tournament tournament,int roundNumber, int matchNumber);
 }

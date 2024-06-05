@@ -303,6 +303,12 @@ textarea.input-field {
     padding: 8px;
 }
 
+.match{
+    border-left:1px solid black;
+    border-bottom:1px solid black;
+    border-top:1px solid black;
+}
+
 .matchup::before {
     content: "";
     display: inline-block;

@@ -32,6 +32,7 @@
                     </div>
                 </div>
             </div>
+             <c:if test= "${round==1}">
             <div class="row">   
                 <div class="col-md-6">
                     <div class="form-group">
@@ -60,6 +61,83 @@
                         class="form-control" id="team2score" name="team2score">
                 </div>
             </div>
+             </c:if>
+             <c:if test="${round>1}">
+             <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group
+                        <label for="team1">Previous Winners</label> 
+                        <input type="checkbox" id="prevWinners" name="prevWinners" />
+                    </div>
+                </div>
+            </div>
+            <div class="prevWinnerUnselect">
+                <div class="row">   
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="team1">Team 1</label> <select class="form-control"
+                            id="winnerteam1" name="team1">
+                            <option value="">Select Team</option>
+                            <c:forEach var="team" items="${teams1}">
+                                <option value="${team.teamId}">${team.teamName}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="team2">Team 2</label> <select class="form-control"
+                            id="winnerteam2" name="team2">
+                            <option value="">Select Team</option>
+                            <c:forEach var="team" items="${teams2}">
+                                <option value="${team.teamId}">${team.teamName}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
+                
+                </div>
+            </div>
+             </c:if>
+            </div>
+            <div class="prevWinnerSelect">
+                <div class="row">   
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="team1">Team 1</label> <select class="form-control"
+                            id="team1" name="team1" >
+                            <option value="${team1winner.teamId}" selected>${team1winner.teamName}</option>   
+                        </select>    
+                    </div>
+                    
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="team2">Team 2</label> <select class="form-control"
+                            id="team2" name="team2" >
+                            <option value="${team2winner.teamId}" selected>${team2winner.teamName}</option>   
+                        </select> 
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-6">
+                    <div class="form-group">
+            <label for="team1score">Team 1 Score</label> <input type="number"
+                        class="form-control" id="team1score" name="team1score" >
+            </div>
+            </div>
+            <div class="col-md-6">
+                    <div class="form-group">
+            <label for="team2score">Team 2 Score</label> <input type="number"
+                        class="form-control" id="team2score" name="team2score">
+            </div>
+            </div>
+            </div>
+
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group
@@ -83,4 +161,26 @@
     </form>
 
 </body>
+<script>
+    $(document).ready(function() {
+        $(".prevWinnerSelect").hide();
+        $("#prevWinners").click(function() {
+            if ($(this).is(":checked")) {
+                document.getElementById("team1").setAttribute("name", "team1");
+                document.getElementById("team2").setAttribute("name", "team2");
+                document.getElementById("winnerteam1").setAttribute("name", "");
+                document.getElementById("winnerteam2").setAttribute("name", "");
+                $(".prevWinnerSelect").show();
+                $(".prevWinnerUnselect").hide();
+            } else {
+                document.getElementById("team1").setAttribute("name", "");
+                document.getElementById("team2").setAttribute("name", "");
+                document.getElementById("winnerteam1").setAttribute("name", "team1");
+                document.getElementById("winnerteam2").setAttribute("name", "team2");
+                $(".prevWinnerSelect").hide();
+                $(".prevWinnerUnselect").show();
+            }
+        });
+    });
+</script>
 </html
