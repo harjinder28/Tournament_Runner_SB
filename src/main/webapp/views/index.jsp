@@ -12,15 +12,14 @@
             
             <div class="mainnav">
             <ul>
-               
-                 </ul>
-                </div>
-                <div class="logs">
-            <ul>
 
                 <li ><a class="active" href="/home">Home</a></li>
                 <li><a href="/user/createTournament">Create Tournament</a></li>
                 <li><a href="/user/viewTournament">View Tournament</a></li>
+                </ul>
+                </div>
+                <div class="logs">
+            <ul>
                 <li style="display:${isLogged?"none":"inline"};"><a href="/login">Login</a></li>
                 <li style="display:${isLogged?"none":"inline"};"><a href="/signup">Sign Up</a></li>
             </ul></div>
