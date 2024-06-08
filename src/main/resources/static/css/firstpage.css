@@ -2,10 +2,17 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.logo {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #45a049;
+}
 nav {
+    top: 0%;
     background-color: #333;
     color: #fff;
+    position: sticky;
+    z-index: 2;
 }
 
 nav .container {
@@ -29,7 +36,11 @@ nav div ul {
 nav ul li {
     display: inline;
 }
-
+nav ul li a:hover {
+    background-color: #4CAF50;
+    border:1px solid black;
+    border-radius: 5px;
+}
 nav ul li a {
     color: #fff;
     text-decoration: none;
@@ -37,14 +48,23 @@ nav ul li a {
 }
 
 nav div ul li a.active {
-    background-color: #4CAF50;
+    background-color: #5ead62;
     border:1px solid black;
     border-radius: 5px;
 }
+hr{
+    margin: 0;
+    margin-bottom: 20px;
 
-.container {
+}
+.firstSection {
+    width:100%;
+    display:"flex";flex-direction:"column";
     text-align: center;
-    margin-top: 5px;
+}
+.container {
+    margin-left: 20px;
+    text-align: center;
 }
 
 h2 {
@@ -54,12 +74,13 @@ h2 {
 
 p {
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .buttons {
     display: flex;
-    justify-content: center;
+    margin: 8px;
+    margin-top: 0px;
 }
 
 .btn {
@@ -70,8 +91,124 @@ p {
     text-decoration: none;
     font-size: 16px;
     margin-right: 10px;
+    border-radius: 5px;
+    width: max-content;
 }
 
 .btn:hover {
     background-color: #45a049;
+}
+.containerTop{
+    display: inline-flex;
+
+}
+.LeftText{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 20px;
+}
+p{
+    
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 1rem;
+
+}
+.RightImage{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+/* ----------------------------------------------------------- */
+/*Typrewritter Animation*/
+.TypewritterP{
+
+}
+[data-typewriter] {
+    margin-top: 0%;
+    width: max-content;
+    font-family: system-UI;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #23bd51;
+    height: 4rem;
+    border-right: .2rem solid transparent;
+  }
+
+  /* [data-typewriter]:not(.typing){
+    animation: blink-caret 1.1s step-end infinite;
+  }
+
+  @keyframes blink-caret {
+    0%,
+    100% {
+      border-color: transparent
+    }
+
+    50% {
+      border-color: #1db637;
+      height: 5px;
+    }
+  } */
+
+
+
+/* ----------------------------------------------------------- */
+.heroImg{
+    margin:5px;
+    width:500px;
+    height:300px;
+    border-radius: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer-links a, footer .social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card {
+    width: 200px;
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 50px 60px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+
+.card:hover {
+    transform: translate(0, -5px);
+    transition: 0.3s;
 }
