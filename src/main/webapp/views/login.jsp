@@ -3,16 +3,19 @@
 <head>
     <title>GMT - Login</title>
     <link rel="stylesheet" type="text/css" href="/css/login.css">
+    
+    
 </head>
 <body>
-    <div class="containerdiv2">
+<%@include file="/views/Navbar.jsp"%>
+    <div class="containerdiv2" style="box-shadow: 5px 5px #aaddaa;padding: 30px;">
         <h1>Login</h1>
         <form action="/login" method="post">
             <input type="email" placeholder="Username" class="input-field" name="username" required="required">
             <input type="password" placeholder="Password" class="input-field" name="password" required="required">
             <button type="submit" class="btnl">Login</button>
         </form>
-        <p>Don't have an account? <a href="/signup.jsp">Sign up</a></p>
+        <p>Don't have an account? <a href="/signup">Sign up</a></p>
     </div>
 </body>
 </html>

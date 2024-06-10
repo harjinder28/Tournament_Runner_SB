@@ -40,7 +40,7 @@ public class CreateController {
 		repository.save(tournament);
 		userRepository.save(user);
 		
-		return "managetm";
+		return "managetm_details";
 	}
 
 }

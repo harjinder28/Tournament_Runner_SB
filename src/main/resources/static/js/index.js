@@ -13,7 +13,7 @@ class Typerwriter {
   //   toggleTyping = () => this.el.classList.toggle("typing");
 
   async typewrite(word) {
-    await this.wait(this.delay);
+    await this.wait(400);
     // this.toggleTyping();
     for (const letter of word.split("")) {
       this.el.textContent += letter;

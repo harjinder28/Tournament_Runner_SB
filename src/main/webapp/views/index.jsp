@@ -6,26 +6,8 @@
     <link rel="stylesheet" type="text/css" href="/css/firstpage.css">
 </head>
 <body>
-    <nav>   
-        <div class="container">
-            <h1 class="logo">GMT</h1>
-            
-            <div class="mainnav">
-            <ul>
-
-                <li ><a class="active" href="/home">Home</a></li>
-                <li><a href="/user/createTournament">Create Tournament</a></li>
-                <li><a href="/user/viewTournament">View Tournament</a></li>
-                </ul>
-                </div>
-                <div class="logs">
-            <ul>
-                <li style="display:${isLogged?"none":"inline"};"><a href="/login">Login</a></li>
-                <li style="display:${isLogged?"none":"inline"};"><a href="/signup">Sign Up</a></li>
-            </ul></div>
-        </div>
-    </nav>
-    
+    <%@include file="/views/Navbar.jsp"%>
+     <div class="BackSvg"></div>
      <section class="firstSection" >
         
             <h2 style="align-self: center;">Welcome to Game Tournament Management</h2>
@@ -63,6 +45,7 @@
             <div clas="card-desc"><a href="/user/viewTournament" class="btn">Manage Tournament</a></div>
         </div>
     </div>
+    </section>
      <section>
         <div class="container">
             <h2>Why Choose Us?</h2>
