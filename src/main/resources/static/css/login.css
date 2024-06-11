@@ -1,66 +1,69 @@
 @charset "UTF-8";
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
 }
-h3{
-	visibility: hidden;
+h3 {
+  visibility: hidden;
 }
 .containerdiv2 {
-    max-width: 400px;
-    margin: 100px auto;
-   
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px #aaddaa;
+  padding: 30px;
+  border-left: 1px solid #aaddaa;
+  border-top: 1px solid #aaddaa;
+  max-width: 400px;
+  margin: 100px auto;
+  background-color: #fff;
 }
 
 h1 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 30px;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-field {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
 }
-*, ::after, ::before {
-    box-sizing: border-box;
+*,
+::after,
+::before {
+  box-sizing: border-box;
 }
 .btnl {
-    padding: 10px;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 3px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+  padding: 10px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 p {
-    text-align: center;
+  text-align: center;
 }
 
 p a {
-    color: #4CAF50;
-    text-decoration: none;
+  color: #4caf50;
+  text-decoration: none;
 }
 
 p a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }

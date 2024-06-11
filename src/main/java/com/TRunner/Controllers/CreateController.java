@@ -31,10 +31,11 @@ public class CreateController {
 	}
 
 	@PostMapping("/createTournament")
-	public String postMethodName(@ModelAttribute Tournament tournament,Principal principal) {
+	public String postMethodName(@ModelAttribute Tournament tournament,Principal principal,Model model) {
 		//TODO: process POST request
 		System.out.println(tournament);
 		User user=userRepository.findByEmail(principal.getName());
+		model.addAttribute("uname", user.getUname());
 		tournament.setUser(user);
 		user.getTournaments().add(tournament);
 		repository.save(tournament);

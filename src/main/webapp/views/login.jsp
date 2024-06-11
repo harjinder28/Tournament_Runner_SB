@@ -8,7 +8,7 @@
 </head>
 <body>
 <%@include file="/views/Navbar.jsp"%>
-    <div class="containerdiv2" style="box-shadow: 5px 5px #aaddaa;padding: 30px;">
+    <div class="containerdiv2" style="">
         <h1>Login</h1>
         <form action="/login" method="post">
             <input type="email" placeholder="Username" class="input-field" name="username" required="required">

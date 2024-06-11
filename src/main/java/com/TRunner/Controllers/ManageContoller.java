@@ -15,6 +15,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import com.TRunner.Entities.Team;
 import com.TRunner.Entities.Tournament;
+import com.TRunner.Entities.User;
 import com.TRunner.Repositories.TeamRepository;
 import com.TRunner.Repositories.TournamentRepository;
 import com.TRunner.Repositories.UserRepository;
@@ -82,14 +83,16 @@ public class ManageContoller {
 	}
 
 	@PostMapping("/updateTournament")
-	public RedirectView updateDetail(@ModelAttribute Tournament tournament, Principal principal, Model modal) {
+	public RedirectView updateDetail(@ModelAttribute Tournament tournament, Principal principal, Model model) {
 		int tid = tournament.getTid();
+		User user=userRepository.findByEmail(principal.getName());
+		model.addAttribute("uname", user.getUname());
 		if (tournament != null) {
-			tournament.setUser(userRepository.findByEmail(principal.getName()));
+			tournament.setUser(user);
 			tRepository.save(tournament);
 		}
 		// System.out.println(tournament.getGameName() + tournament.getGametype());
-		modal.addAttribute("tournament", tournament);
+		model.addAttribute("tournament", tournament);
 
 		return new RedirectView("/user/manageTournament/" + tid+"/details");
 	}

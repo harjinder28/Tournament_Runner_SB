@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.TRunner.Entities.Tournament;
+import com.TRunner.Entities.User;
 import com.TRunner.Repositories.TournamentRepository;
 import com.TRunner.Repositories.UserRepository;
 
@@ -25,8 +26,10 @@ public class ViewController {
 	@GetMapping("/viewTournament")
 	public String viewTournament(Model model,Principal principal) {
 //		List<Tournament> tournaments= userRepository.findByEmail(principal.getName()).getTournaments();
-		List<Tournament> tournaments= tRepository.findByUser(userRepository.findByEmail(principal.getName()));
+		User user=userRepository.findByEmail(principal.getName());
+		List<Tournament> tournaments= tRepository.findByUser(user);
 		model.addAttribute("tournaments",tournaments);
+		model.addAttribute("uname", user.getUname());
 		return "viewtm";
 	}
 	

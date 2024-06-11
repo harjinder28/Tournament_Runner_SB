@@ -7,7 +7,8 @@
     <link rel="stylesheet" type="text/css" href="/css/signup.css">
 </head>
 <body> 
-    <div class="container" style="box-shadow: 5px 5px #aaddaa;padding: 30px;">
+<%@include file="/views/Navbar.jsp"%>
+    <div class="container0" style="box-shadow: 5px 5px #aaddaa;padding: 30px;">
         <h1>Sign Up</h1>
         <form action="/signup" method="post">
             <input type="text" placeholder="Username" name="uname" required>
