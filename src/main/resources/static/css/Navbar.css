@@ -11,7 +11,7 @@ nav {
   z-index: 2;
 }
 
-nav .container {
+nav .container0 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,7 +50,7 @@ nav div ul li a.active {
   border: 1px solid black;
   border-radius: 5px;
 }
-.container {
+.container0 {
   margin-left: 20px;
   text-align: center;
 }

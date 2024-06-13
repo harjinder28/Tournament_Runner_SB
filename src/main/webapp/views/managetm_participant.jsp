@@ -38,11 +38,11 @@
 		<div class="content">
 		<section id="Participant">
 			<div id="addTeamPlayers" class="section">
-				<h2 style="text-align:center">Add Team</h2>
+				<h2 style="color:green;text-align:center;border:1px solid;border-radius:10px;box-shadow:0 0 7px grey">Add Team</h2>
 					
 						<div id="team">
 							<div class="teamTableDiv">
-								<table id="teamTable" class="table table-striped">
+								<table id="teamTable" class="table0 table-striped">
 									<thead>
 										<tr>
 											<th>Team ID</th>
@@ -64,8 +64,8 @@
 									</tbody>
 								</table>
 							</div>
-							<div class="tableButton" style="display: flex;justify-content: center;">
-							<button  id="addTeam" onclick="showAddTeamModal()">+ Add
+							<div class="tableButton" style="margin-top:10px;display: flex;justify-content: center;">
+							<button  id="addTeam" onclick="showAddTeamModal()" style="color:White;background-color:#4caf50;text-align:center;border:1px solid;border-radius:10px;box-shadow:0 0 7px grey">+ Add
 								Team</button>
 							</div>
 						</div>

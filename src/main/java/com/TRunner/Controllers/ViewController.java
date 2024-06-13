@@ -29,6 +29,7 @@ public class ViewController {
 		User user=userRepository.findByEmail(principal.getName());
 		List<Tournament> tournaments= tRepository.findByUser(user);
 		model.addAttribute("tournaments",tournaments);
+		model.addAttribute("isLogged",true);
 		model.addAttribute("uname", user.getUname());
 		return "viewtm";
 	}

@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/css/Navbar.css">
 
 <nav>   
-        <div class="container">
+        <div class="container0">
             <h1 class="logo">GMT</h1>
             
             <div class="mainnav">
