@@ -34,11 +34,11 @@ public class TeamController {
 		Tournament  tournament = tournamentRepository.findById(tid).get();
 		if(tournament!=null) {
 			User user=userRepository.findByEmail(principal.getName());
-			team.setTournaments(tournament);
+			team.setTournament(tournament);
 			team.setTeamOwner(user);
 			teamRepository.save(team);
-			tournament.getTeams().add(team);
-			tournamentRepository.save(tournament);
+//			tournament.getTeams().add(team);
+//			tournamentRepository.save(tournament);
 		}
 		
 		return new RedirectView("/user/manageTournament/"+tid);

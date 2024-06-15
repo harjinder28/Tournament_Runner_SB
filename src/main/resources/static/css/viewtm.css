@@ -48,7 +48,9 @@ h1 {
   margin-bottom: 30px;
   border-bottom: 3px solid #4caf50;
 }
-
+button {
+  line-height: normal;
+}
 /* .tourna {
   display: flex;
   flex-direction: column;
@@ -195,4 +197,38 @@ th {
 .table0 tr td button:hover {
   background-color: #3d533e;
   color: white;
+}
+.btn {
+  padding: 10px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ----------------------------------Delete Dialog Styling------------------------- */
+#deleteDialog {
+  position: static;
+  z-index: 1;
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  width: max-content;
+  height: max-content;
+  overflow: auto;
+  border: 2px solid mediumaquamarine;
+  border-radius: 80px;
+  background-color: rgba(59, 202, 78, 0.801);
+}
+#deleteDialog button {
+  margin: 5px;
+  margin-left: 20px;
+  background-color: #c3c4c3;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
 }

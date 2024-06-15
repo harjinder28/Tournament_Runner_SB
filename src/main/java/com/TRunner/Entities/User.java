@@ -22,8 +22,8 @@ public class User {
 	String password;
 	int contact;
 
-	@OneToMany
-	List<Tournament> tournaments;
+//	@OneToMany
+//	List<Tournament> tournaments;
 
 	public User() {
 		super();
@@ -31,14 +31,13 @@ public class User {
 	}
 
 
-	public User(int uid, String uname, String email, String password, int contact, List<Tournament> tournaments) {
+	public User(int uid, String uname, String email, String password, int contact) {
 		super();
 		this.uid = uid;
 		this.uname = uname;
 		this.email = email;
 		this.password = password;
 		this.contact = contact;
-		this.tournaments = tournaments;
 	}
 //	public User(int uid, String uname, String email, String password, int contact) {
 //		super();
@@ -80,13 +79,13 @@ public class User {
 	public void setContact(int contact) {
 		this.contact = contact;
 	}
-	public List<Tournament> getTournaments() {
-		return tournaments;
-	}
-
-	public void setTournaments(List<Tournament> tournaments) {
-		this.tournaments = tournaments;
-	}
+//	public List<Tournament> getTournaments() {
+//		return tournaments;
+//	}
+//
+//	public void setTournaments(List<Tournament> tournaments) {
+//		this.tournaments = tournaments;
+//	}
 
 	@Override
 	public String toString() {

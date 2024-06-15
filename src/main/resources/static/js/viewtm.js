@@ -34,7 +34,6 @@ function setCircles() {
   for (let i = 0; i < tab; i += 4) {
     const span = document.createElement("span");
     span.classList.add("step");
-    span.innerText = i + 1;
     circle.appendChild(span);
   }
 }
@@ -85,4 +84,24 @@ function fixStepIndicator(n) {
   }
   //... and adds the "active" class to the current step:
   x[n].className += " active";
+}
+
+function deleteConfirmation(formID) {
+  this.addEventListener("click", function (e) {
+    e.preventDefault();
+  });
+  let form = document.getElementById(formID);
+  let dialog = document.getElementById("deleteDialog");
+  dialog.showModal();
+
+  var deleteConfirm = document.getElementById("deleteConfirm");
+  deleteConfirm.addEventListener("click", function () {
+    form.submit();
+  });
+
+  var close = document.getElementById("close");
+  close.addEventListener("click", function () {
+    let dialog = document.getElementById("deleteDialog");
+    dialog.close();
+  });
 }

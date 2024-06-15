@@ -37,11 +37,11 @@ public class CreateController {
 		User user=userRepository.findByEmail(principal.getName());
 		model.addAttribute("uname", user.getUname());
 		tournament.setUser(user);
-		user.getTournaments().add(tournament);
+//		user.getTournaments().add(tournament);
 		repository.save(tournament);
 		userRepository.save(user);
-		
-		return "managetm_details";
+//		model.addAllAttributes(null)
+		return "redirect:/user/viewTournament";
 	}
 
 }

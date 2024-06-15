@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 @Entity
 public class Team {
 	@Id
@@ -64,10 +65,10 @@ public class Team {
 	public void setTeamOwner(User teamOwner) {
 		this.teamOwner = teamOwner;
 	}
-	public Tournament getTournaments() {
+	public Tournament getTournament() {
 		return tournament;
 	}
-	public void setTournaments(Tournament tournament) {
+	public void setTournament(Tournament tournament) {
 		this.tournament = tournament;
 	}
 	@Override

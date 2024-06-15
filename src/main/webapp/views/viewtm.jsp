@@ -7,14 +7,13 @@
 <html>
 <head>
 
-    <%-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --%>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
   
 
 <meta charset="UTF-8">
 <title>View Tournament</title>
 <link rel="stylesheet" type="text/css" href="/css/viewtm.css">
-<script src="js/viewtm.js"></script> 
 </head>
 <body>
 	<nav>
@@ -60,7 +59,7 @@
                     <td>${tournament.tournamentType}</td>
                     <td>${tournament.startDate}</td>
                     <td><a href="/user/manageTournament/${tournament.tid}/details"><button name="manage" style="background-color: #4CAF50">Manage</button></a>
-                        <button name="delete" type="submit" method="post" action="/user/deleteTournament/${tournament.tid}" value="Delete" style="background-color: red">Delete</button></td>
+                        <form id="form${counter.count}" style="display:inline;" method="post" action="/user/deleteTournament/${tournament.tid}"><button id="deleteTournamentButton"  name="delete" onclick="deleteConfirmation('form${counter.count}')" value="Delete" style="background-color: red">Delete</button></form></td>
                 </tr>
                 ${counter.count%4==0?"</tbody></table>
                 <table class='table0 tab'>
@@ -88,7 +87,16 @@
          </div>
     </div>
 
-<%-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> --%>
+<dialog id="deleteDialog">
+  <form method="dialog" >
+    <p>Are you sure you want to delete?</p>
+    <menu>
+      <button id='close' value="cancel">Cancel!!</button>
+      <button id='deleteConfirm' type="submit" value="submit">Yes!</button>
+    </menu>
+  </form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="/js/viewtm.js" type="text/javascript"></script>
 </body>
 </html>
