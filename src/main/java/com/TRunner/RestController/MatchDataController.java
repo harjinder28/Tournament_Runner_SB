@@ -34,9 +34,9 @@ public class MatchDataController {
 			Match match=itr.next();
 		
 			matches.add(new MatchModal(
-					match.getMatchId(), match.getTeam1().getTeamName(), match.getTeam1score()
-					, match.getTeam2().getTeamName() ,match.getTeam2score(), match.getMatchDate()
-					, match.getMatchTime(), (match.getWinnerTeam()!=null)?match.getWinnerTeam().getTeamName():"",match.getMatchNumber(),match.getRoundNumber())); 
+					match.getMatchId(),  (match.getTeam1()!=null)?match.getTeam1().getTeamName():"Add Team",  (match.getTeam1()!=null)?match.getTeam1score():0
+					,  (match.getTeam2()!=null)?match.getTeam2().getTeamName():"Add Team" , (match.getTeam2()!=null)?match.getTeam2score():0, match.getMatchDate()
+					, match.getMatchTime(), (match.getWinnerTeam()!=null)?match.getWinnerTeam().getTeamName():"Add Team",match.getMatchNumber(),match.getRoundNumber())); 
 		} 
 		return matches;
 	}

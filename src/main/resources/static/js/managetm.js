@@ -14,15 +14,3 @@ window.addEventListener("DOMContentLoaded", function () {
     updateButton.removeAttribute("hidden");
   });
 });
-
-// Function to show the Add Team popup modal
-function showAddTeamModal() {
-  var modal = document.querySelector(".overlayTeam");
-  modal.classList.remove("hiddendiv");
-}
-
-// Function to hide the Add Team popup modal
-function hideAddTeamModal() {
-  var modal = document.querySelector(".overlayTeam");
-  modal.classList.add("hiddendiv");
-}

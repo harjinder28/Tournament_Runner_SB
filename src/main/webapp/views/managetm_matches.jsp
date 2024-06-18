@@ -49,8 +49,6 @@
 						id="tournamentType" id="tournamentType" required
 						class="input-field">
 						<option value="Single Elimination">Single Elimination</option>
-						<option value="Double Elimination">Double Elimination</option>
-						<option value="Round Robin">Round Robin</option>
 					</select>
 
 					<%-- <button type="submit" id="setupBracket" >Setup Bracket</button> --%>

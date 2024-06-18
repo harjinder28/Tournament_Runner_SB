@@ -80,9 +80,9 @@
 					class="input-field" id="TournamentType" name="tournamentType"
 					disabled>
 					<option value='${tournament.tournamentType}' selected>${tournament.tournamentType}</option>
-					<option value="Single Elimination">Single Elimination</option>
-					<option value="Double Elimination">Double Elimination</option>
-					<option value="Round Robin">Round Robin</option>
+					<%-- <option value="Single Elimination">Single Elimination</option> --%>
+					<%-- <option value="Double Elimination">Double Elimination</option>
+					<option value="Round Robin">Round Robin</option> --%>
 				</select><br> <label>Start Date</label><br> <input type="date"
 					value='${tournament.startDate}' class="input-field" id="StartDate"
 					name="startDate" disabled><<br> <label>Start

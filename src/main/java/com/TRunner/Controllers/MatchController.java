@@ -34,6 +34,7 @@ public class MatchController {
 	TournamentRepository tournamentRepository;
 	@Autowired
 	TeamRepository teamRepository;
+	
 	@GetMapping("/manageTournament/{tId}/addMatch/{round}/{match}")
 	public String addMatch(Model model,@PathVariable("tId") int tId,@PathVariable("round") int round,@PathVariable("match") int match) {
 		Tournament tournament = tournamentRepository.findById(tId).get();

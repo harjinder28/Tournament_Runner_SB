@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.TRunner.Entities.Match;
 import com.TRunner.Entities.Tournament;
+import com.TRunner.Entities.Team;
+
 
 
 @Repository
@@ -17,4 +19,9 @@ public interface MatchRepository extends JpaRepository<Match, Integer>{
 	
 	@Transactional
 	public void deleteByTournament(Tournament tournament);
+	
+//	@Transactional
+	public  List<Match> getByTeam1(Team team1);
+	public List<Match> getByTeam2(Team team2);
+	public List<Match> getByWinnerTeam(Team winner);
 }

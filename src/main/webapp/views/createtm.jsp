@@ -54,9 +54,9 @@
             </select>
             <select class="input-field" name=tournamentType>
                 <option value="" disabled selected>Select Tournament Type</option>
-                <option value="single elimination">Single Elimination</option>
-                <option value="double elimination">Double Elimination</option>
-                <option value="round-robin">Round Robin</option>
+                <option value="Single Elimination">Single Elimination</option>
+                <%-- <option value="double elimination">Double Elimination</option>
+                <option value="round-robin">Round Robin</option> --%>
             </select>
             <textarea placeholder="Description" class="input-field" name="tournamentDiscription"></textarea>
             </div>

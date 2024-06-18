@@ -278,14 +278,26 @@ td {
   align-items: center;
   flex-direction: column;
   background-color: #fff;
-  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.7);
+  padding: 10px;
   border-radius: 5px;
   width: 300px;
+  height: 400px;
 }
-.popup-content h2 {
+.popup-content h3 {
+  border: 2px solid black;
+  border-radius: 15px;
   background-color: #4caf50;
 }
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
+}
 .popup-content input {
+  border: 1px solid black;
   width: 80%;
 }
 /* -----------------------=----------------------- */
@@ -293,7 +305,7 @@ td {
   width: 90%;
 }
 .table0 tr {
-  line-height: 60px;
+  line-height: 35px;
 }
 .table0 thead tr {
   border-collapse: collapse;
@@ -304,6 +316,9 @@ th {
   padding: 5px;
   /* border: 2px solid black; */
 }
+.table0 tr td {
+  text-align: center;
+}
 .table0 thead tr {
   background-color: #4caf50;
   box-shadow: 0 0 4px #000000;
@@ -312,15 +327,45 @@ th {
   box-shadow: 0 0 4px #000000;
 }
 .table0 tbody tr th {
-  text-align: justify;
+  /* text-align: justify; */
   background-color: #3d533e;
   color: white;
   /* width: px; */
 }
 .table0 tr td button {
+  margin-left: 5px;
   background-color: #4caf50;
   color: rgb(0, 0, 0);
   border: 1px solid;
+  border-radius: 5px;
+  /* padding: 5px; */
+  cursor: pointer;
+}
+#savebtn {
+  background-color: #4caf50;
+  margin-bottom: 5px;
+}
+/* ----------------------------------Delete Dialog Styling------------------------- */
+#deleteDialog {
+  display: none;
+  position: static;
+  z-index: 1;
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  width: max-content;
+  height: max-content;
+  overflow: auto;
+  border: 2px solid mediumaquamarine;
+  border-radius: 80px;
+  background-color: rgba(59, 202, 78, 0.801);
+}
+#deleteDialog button {
+  margin: 5px;
+  margin-left: 20px;
+  background-color: #c3c4c3;
+  color: rgb(0, 0, 0);
+  border: none;
   border-radius: 5px;
   padding: 5px;
   cursor: pointer;
