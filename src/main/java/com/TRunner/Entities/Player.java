@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -12,18 +14,20 @@ public class Player {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int playerId;
 	String playerName;
+	String role;
 	String dateOfBirth;
 	int contact;
-	@OneToOne
+	@ManyToOne
 	Team team;
 	public Player() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Player(int playerId, String playerName, String dateOfBirth, int contact, Team team) {
+	public Player(int playerId, String playerName,String role ,String dateOfBirth, int contact, Team team) {
 		super();
 		this.playerId = playerId;
 		this.playerName = playerName;
+		this.role=role;
 		this.dateOfBirth = dateOfBirth;
 		this.contact = contact;
 		this.team = team;
@@ -36,6 +40,12 @@ public class Player {
 	}
 	public String getPlayerName() {
 		return playerName;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
 	}
 	public void setPlayerName(String playerName) {
 		this.playerName = playerName;
@@ -60,8 +70,9 @@ public class Player {
 	}
 	@Override
 	public String toString() {
-		return "Player [playerId=" + playerId + ", playerName=" + playerName + ", dateOfBirth=" + dateOfBirth
-				+ ", contact=" + contact + ", team=" + team + "]";
+		return "Player [playerId=" + playerId + ", playerName=" + playerName + ", role=" + role + ", dateOfBirth="
+				+ dateOfBirth + ", contact=" + contact + ", team=" + team + "]";
 	}
+
 	
 }

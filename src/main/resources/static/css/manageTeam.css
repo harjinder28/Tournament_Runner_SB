@@ -1,0 +1,415 @@
+@charset "UTF-8";
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+.btnsv {
+  background-color: #ff0000;
+}
+.btnupd {
+  background-color: #4caf50;
+}
+.input-field {
+  width: 70%;
+  margin-right: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #887d7de3;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+select.input-field {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+  position: sticky;
+  /* height: 100%; */
+  top: 0%;
+}
+nav .navcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+nav div h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+nav ul li a:hover {
+  background-color: #4caf50;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* background-color: #bbe7b3; */
+}
+
+.containerTop {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  /* height: 100%; */
+  /* background-color: #2de736; */
+}
+
+.sidebar {
+  width: 20%;
+  /* height: 100%; */
+  /* height: 0cap; */
+  background-color: #c9dfc7;
+  padding: 20px;
+  border-right: 2px solid black;
+  position: static;
+}
+
+.sideNav {
+  background-color: #c9dfc7;
+  top: 15%;
+}
+.sideNav ul li {
+  display: flex;
+  flex-direction: column;
+}
+
+.sideNav ul li a:hover {
+  background-color: #4caf50;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.sideNav ul {
+  margin: 2px;
+}
+.sideNav ul a {
+  color: #000;
+  text-decoration: none;
+}
+.sideNav ul a li {
+  margin: 20px 5px;
+  padding: 5px;
+}
+
+#update-btn {
+  /* margin-right: 30%; */
+  margin: 10px;
+  align-self: center;
+  width: 80px;
+  height: 40px;
+  background-color: #50b3e0;
+}
+#update-btn:hover {
+  background-color: #58c559;
+}
+#save-btn {
+  /* margin-right: 30%; */
+  margin: 10px;
+  align-self: center;
+  width: 80px;
+  height: 40px;
+  background-color: #58c559;
+}
+#save-btn:hover {
+  background-color: #86a37a;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.navcontainer h1 {
+  border-bottom: 4px solid #4caf50;
+}
+.menu-item {
+  padding: 10px;
+  margin-top: 2rem;
+  cursor: pointer;
+  background-color: #e0e0e0;
+
+  border-radius: 4px;
+  border: 0.5px solid #c0c0c0;
+}
+.item {
+  background-color: #4caf50;
+}
+.menu-item:hover {
+  background-color: #676b69;
+}
+
+.content {
+  width: 100%;
+  /* flex: 1; */
+  /* height: 100%; */
+  padding: 20px;
+  background-color: #ebdfdf;
+  /* border-left: 2px solid black; */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  display: block;
+  /* background-color: #d8a80b; */
+  width: 100%;
+  height: 100%;
+  /* height: 0cap; */
+}
+
+/*.tabactive { 
+    display: block;
+}*/
+
+#addTeamPlayers {
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  border: 1px solid;
+  border-radius: 10px;
+  box-shadow: 0 0 7px grey;
+}
+/* Add your existing CSS styles */
+
+/* Multitab styles */
+.multitab .tab-header {
+  display: flex;
+}
+
+.multitab .tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.multitab .tab-item:hover,
+.multitab .tab-item.tabactive {
+  background-color: #bdbdbd;
+}
+
+.multitab .tab-content {
+  margin-top: 20px;
+}
+
+.multitab .tab {
+  display: none;
+}
+
+.tab.tabactive {
+  display: block;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.btnsv {
+  background-color: #ff0000;
+}
+.btnupd {
+  background-color: #4caf50;
+}
+.input-field {
+  width: 70%;
+  margin-right: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #887d7de3;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+select.input-field {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+textarea.input-field {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  resize: vertical;
+}
+.playerTable {
+  width: 100%;
+  border: 2px solid gray;
+  /* border-collapse: collapse; */
+  background-color: #b6bdb9;
+}
+.playerTableDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab-content {
+  text-align: center;
+}
+.teamTable tbody tr th,
+td {
+  border-right: 1px solid #7c7878;
+  padding: 3px;
+  border-bottom: 1px solid #7c7878;
+}
+
+.overlayTeam {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.hiddendiv {
+  display: none;
+}
+.popup-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  width: 300px;
+  height: 400px;
+}
+.popup-content h3 {
+  padding: 3px;
+  border: 2px solid #4caf50;
+  border-radius: 15px;
+  color: #4caf50;
+  /* background-color: ; */
+}
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
+}
+.popup-content input {
+  border: 1px solid black;
+  width: 85%;
+  margin: 5px 0px;
+}
+/* -----------------------=----------------------- */
+.table0 {
+  width: 90%;
+}
+.table0 tr {
+  line-height: 35px;
+}
+.table0 thead tr {
+  border-collapse: collapse;
+}
+.table0 thead tr th {
+  background-color: #4caf50;
+  box-shadow: 0 0 4px #000000;
+  text-align: center;
+}
+.table0 tr td,
+th {
+  font-size: large;
+  padding: 5px;
+  /* border: 2px solid black; */
+}
+
+.table0 tr td {
+  text-align: center;
+}
+.table0 thead tr {
+  background-color: #4caf50;
+  box-shadow: 0 0 4px #000000;
+}
+.table0 tbody tr {
+  box-shadow: 0 0 4px #000000;
+}
+.table0 tbody tr th {
+  text-align: center;
+  background-color: #3d533e;
+  color: white;
+  /* width: px; */
+}
+.table0 tr td button {
+  margin-left: 5px;
+  background-color: #4caf50;
+  color: rgb(0, 0, 0);
+  border: 1px solid;
+  border-radius: 5px;
+  /* padding: 5px; */
+  cursor: pointer;
+}
+#savebtn {
+  background-color: #4caf50;
+  margin-bottom: 5px;
+}
+/* ----------------------------------Delete Dialog Styling------------------------- */
+#deleteDialog {
+  /* bottom: 30%; */
+  display: none;
+  /* position: sticky; */
+  z-index: 1;
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  width: max-content;
+  height: min-content;
+  overflow: auto;
+  border: 2px solid mediumaquamarine;
+  border-radius: 80px;
+  box-shadow: 0px 5px rgba(20, 100, 10, 0.5);
+  background-color: rgba(59, 202, 78, 0.801);
+}
+#deleteDialog button {
+  margin: 5px;
+  margin-left: 20px;
+  background-color: #c3c4c3;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}

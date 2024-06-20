@@ -60,7 +60,7 @@
                 							    <td>${team.teamName}</td>
                 							    <td>${team.teamDescription}</td>
                 							    <td>${team.teamSize}</td>
-												<td><a href="/user/manageTournament/team/${team.teamId}"><button name="manage" style="background-color: #4CAF50">Manage</button></a>
+												<td><a href="/user/manageTournament/team/${tid}/${team.teamId}"><button name="manage" style="background-color: #4CAF50">Manage</button></a>
                         <form id="form${counter.count}" style="display:inline;" method="post" action="/user/manageTournament/deleteTeam/${team.teamId}"><input type="hidden" name="tId" value="${tid}"><button id="deleteTournamentButton" name="delete" onclick="deleteConfirmation('form${counter.count}')" value="Delete" style="background-color: red">Delete</button></form></td>
 											</tr>
  									</c:forEach> 

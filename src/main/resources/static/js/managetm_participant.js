@@ -31,4 +31,3 @@ function hideAddTeamModal() {
   var modal = document.querySelector(".overlayTeam");
   modal.classList.add("hiddendiv");
 }
-2;

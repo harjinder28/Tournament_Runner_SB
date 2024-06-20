@@ -19,6 +19,7 @@ import com.TRunner.Entities.Team;
 import com.TRunner.Entities.Tournament;
 import com.TRunner.Entities.User;
 import com.TRunner.Repositories.MatchRepository;
+import com.TRunner.Repositories.PlayerRepository;
 import com.TRunner.Repositories.TeamRepository;
 import com.TRunner.Repositories.TournamentRepository;
 import com.TRunner.Repositories.UserRepository;
@@ -34,6 +35,8 @@ public class TeamController {
 	UserRepository userRepository;
 	@Autowired
 	MatchRepository matchRepository;
+	@Autowired
+	PlayerRepository playerRepository;
 	
 	@PostMapping("/addTeam/{tid}")
 	public RedirectView addTeam(@ModelAttribute Team team ,@PathVariable(value = "tid") int tid,Principal principal ) {
@@ -49,10 +52,21 @@ public class TeamController {
 		
 		return new RedirectView("/user/manageTournament/"+tid+"/participants");
 	}
+	@PostMapping("/{tid}/updateTeam/{teamId}")
+	public RedirectView updateTeam(@ModelAttribute Team team ,@PathVariable(value = "teamId") int teamId,Principal principal,@PathVariable("tid") int tid) {
+			User user=userRepository.findByEmail(principal.getName());
+			team.setTeamOwner(user);
+			teamRepository.save(team);
+		return new RedirectView("/user/manageTournament/team/"+tid+"/"+teamId);
+	}
 	
-	@GetMapping("/team/{teamId}")
-	public String getTeam() {
-		return "";
+	@GetMapping("/team/{tid}/{teamId}")
+	public String getTeam(@PathVariable("teamId") int teamId,@PathVariable("tid") int tid,Model model) {
+		Team team=teamRepository.findByTeamId(teamId);		
+		model.addAttribute("players", playerRepository.findByTeam(team));
+		model.addAttribute("tid", tid);
+		model.addAttribute("team", team);
+		return "manageTeam";
 	}
 	
 	@PostMapping("/deleteTeam/{teamId}")
