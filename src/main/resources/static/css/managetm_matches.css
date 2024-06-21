@@ -1,370 +1,356 @@
 @charset "UTF-8";
 
-
-nav{
-	background-color: #333;
-	color: #fff;
-    position: sticky;
-    top: 0%;
-    /* height: 100%; */
+nav {
+  background-color: #333;
+  color: #fff;
+  position: sticky;
+  top: 0%;
+  /* height: 100%; */
 }
 nav .navcontainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
 nav div h1 {
-    margin: 0;
-    font-size: 24px;
+  margin: 0;
+  font-size: 24px;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
-    display: inline;
+  display: inline;
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
 }
-nav ul li a:hover{
-    background-color: #4CAF50;
-    border:1px solid black;
-    border-radius: 5px;
-   
+nav ul li a:hover {
+  background-color: #4caf50;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    /* background-color: #bbe7b3; */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* background-color: #bbe7b3; */
 }
 
 .containerTop {
-    display: flex;
-    margin: 0px;
-    padding: 0px;
-    /* height: 100%; */
-    /* background-color: #2de736; */
-    
-
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  /* height: 100%; */
+  /* background-color: #2de736; */
 }
 
 .sidebar {
-
-    width: 20%;
-    /* height: 100%; */
-    /* height: 0cap; */
-    background-color: #c9dfc7;
-    padding: 20px;
-    border-right: 2px solid black;
-    position: static;
-    
+  width: 20%;
+  /* height: 100%; */
+  /* height: 0cap; */
+  background-color: #c9dfc7;
+  padding: 20px;
+  border-right: 2px solid black;
+  position: static;
 }
-.sideNav{
-    background-color: #c9dfc7;
-    top: 15%;
+.sideNav {
+  background-color: #c9dfc7;
+  top: 15%;
 }
-.sideNav ul li{
-    display: flex;
-    flex-direction: column;
+.sideNav ul li {
+  display: flex;
+  flex-direction: column;
 }
 
-.sideNav ul li a:hover{
-    background-color: #4CAF50;
-    border:1px solid black;
-    border-radius: 5px;
-   
+.sideNav ul li a:hover {
+  background-color: #4caf50;
+  border: 1px solid black;
+  border-radius: 5px;
 }
-.sideNav ul{
-    margin: 2px;
+.sideNav ul {
+  margin: 2px;
 }
-.sideNav ul a{
-    color: #000;
-    text-decoration: none;
-
+.sideNav ul a {
+  color: #000;
+  text-decoration: none;
 }
-.sideNav ul a li{
-    margin: 20px 5px;
-    padding: 5px;
+.sideNav ul a li {
+  margin: 20px 5px;
+  padding: 5px;
 }
 
-#update-btn{
-    margin-right: 30%;
-    align-self: center;
-    width: 80px;
-    height: 40px;
-    background-color: #50b3e0;
+#update-btn {
+  margin-right: 30%;
+  align-self: center;
+  width: 80px;
+  height: 40px;
+  background-color: #50b3e0;
 }
-#update-btn:hover{
-    background-color: #58c559;
+#update-btn:hover {
+  background-color: #58c559;
 }
-#save-btn{
-    margin-right: 30%;
-    align-self: center;
-    width: 80px;
-    height: 40px;
-    background-color: #58c559;
+#save-btn {
+  margin-right: 30%;
+  align-self: center;
+  width: 80px;
+  height: 40px;
+  background-color: #58c559;
 }
-#save-btn:hover{
-    background-color: #86a37a;
+#save-btn:hover {
+  background-color: #86a37a;
 }
 
 .sidebar-menu {
-
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-.navcontainer h1{
-    border-bottom:4px solid #4CAF50;
+.navcontainer h1 {
+  border-bottom: 4px solid #4caf50;
 }
 .menu-item {
-    padding: 10px;
-    margin-top: 2rem;
-    cursor: pointer;
-    background-color: #e0e0e0;
-    
-    border-radius: 4px;
-    border: 0.5px solid #c0c0c0;
+  padding: 10px;
+  margin-top: 2rem;
+  cursor: pointer;
+  background-color: #e0e0e0;
+
+  border-radius: 4px;
+  border: 0.5px solid #c0c0c0;
 }
-.item{
-    background-color: #4CAF50;
+.item {
+  background-color: #4caf50;
 }
-.menu-item:hover{
-    background-color: #676b69;
+.menu-item:hover {
+  background-color: #676b69;
 }
 
 .content {
-    width: 100%;
-    /* flex: 1; */
-    /* height: 100%; */
-    padding: 20px;
-    background-color: #ebdfdf;
-    /* border-left: 2px solid black; */
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* flex: 1; */
+  /* height: 100%; */
+  padding: 20px;
+  background-color: #ebdfdf;
+  /* border-left: 2px solid black; */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
 .section {
-    
-    display: block;
-    /* background-color: #d8a80b; */
-    width: 100%;
-    height: 100%;
-    /* height: 0cap; */
-    
+  display: block;
+  /* background-color: #d8a80b; */
+  width: 100%;
+  height: 100%;
+  /* height: 0cap; */
 }
 
 /*.tabactive { 
     display: block;
 }*/
 
-#addTeamPlayers{
-    justify-content: center;
+#addTeamPlayers {
+  justify-content: center;
 }
 
 h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 /* Add your existing CSS styles */
 
 /* Multitab styles */
 .multitab .tab-header {
-    display: flex;
+  display: flex;
 }
 
 .multitab .tab-item {
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-    background-color: #e0e0e0;
-    cursor: pointer;
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  background-color: #e0e0e0;
+  cursor: pointer;
 }
 
 .multitab .tab-item:hover,
 .multitab .tab-item.tabactive {
-    background-color: #bdbdbd;
+  background-color: #bdbdbd;
 }
 
 .multitab .tab-content {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .multitab .tab {
-    display: none;
+  display: none;
 }
 
 .tab.tabactive {
-    display: block;
+  display: block;
 }
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .btnsv {
-	background-color: #ff0000;
+  background-color: #ff0000;
 }
-.btnupd{
-	background-color: #4CAF50;
+.btnupd {
+  background-color: #4caf50;
 }
 .input-field {
-    width: 70%;
-    margin-right: 8px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #887d7de3;
-    border-radius: 3px;
-    font-size: 16px;
-    font-weight: bold;
+  width: 70%;
+  margin-right: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #887d7de3;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 select.input-field {
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    font-weight: bold;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 textarea.input-field {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 16px;
-    font-weight: bold;
-    resize: vertical;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  resize: vertical;
 }
-.teamTable{
-    width: 95%;
-    border: 2px solid gray;
-    /* border-collapse: collapse; */
-    background-color: #b6bdb9;
+.teamTable {
+  width: 95%;
+  border: 2px solid gray;
+  /* border-collapse: collapse; */
+  background-color: #b6bdb9;
 }
-.teamTableDiv{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+.teamTableDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.tab-content{
-    text-align: center;
+.tab-content {
+  text-align: center;
 }
-.teamTable tbody tr th,td{
-    border-right: 1px solid #7c7878 ;
-    padding: 3px;
-    border-bottom: 1px solid #7c7878;
-    
-}
-
-.bracketBtn{
-
-    width: 80px;
-    height: 40px;
-}
-.bracketBtn:hover{
-    background-color: #79c77a;
+.teamTable tbody tr th,
+td {
+  border-right: 1px solid #7c7878;
+  padding: 3px;
+  border-bottom: 1px solid #7c7878;
 }
 
- /*Custom CSS for Bracket Design */
+.bracketBtn {
+  width: 80px;
+  height: 40px;
+}
+.bracketBtn:hover {
+  background-color: #79c77a;
+}
+
+/*Custom CSS for Bracket Design */
 .bracket-container {
-    display:block;
-    flex-direction: row;
-    justify-content: space-evenly;
-    font-family: Arial, sans-serif;
+  display: block;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: Arial, sans-serif;
 }
 
 .bracket-round {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  align-items: center;
 }
 
 .bracket-matchup {
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    width: 350px;
-    height: 50px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 8px;
 }
 
-.match{
-    border-left:1px solid black;
-    border-bottom:1px solid black;
-    border-top:1px solid black;
+.match {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .matchup::before {
-    content: "";
-    display: inline-block;
-    width: 0;
-    height: 100%;
-    border-left: 1px solid #ccc;
-    position: absolute;
-    left: -175px;
-    top: 0;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  border-left: 1px solid #ccc;
+  position: absolute;
+  left: -175px;
+  top: 0;
 }
 
 .matchup:first-child::before {
-    display: none;
+  display: none;
 }
 
 .team-name {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
 
 .vs-text {
-    margin: 0 8px;
+  margin: 0 8px;
 }
 
 /* Apply some styles to make it more like a bracket */
 .round:last-child .matchup {
-    border-color: transparent;
+  border-color: transparent;
 }
 
 .round:last-child .matchup::before {
-    display: none;
+  display: none;
 }
 
 .round:first-child .matchup {
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .round:last-child .matchup {
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .round:not(:first-child) .matchup {
-    border-top: none;
+  border-top: none;
 }
 
 .round:not(:last-child) .matchup {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .bracket-diagram {
   /* Add styles for the bracket diagram container */
   display: flex;
   flex-direction: row;
-  width:100%;
+  width: 100%;
   align-items: center;
 }
 
@@ -372,7 +358,7 @@ textarea.input-field {
   /* Add styles for each round in the bracket */
   display: flex;
   flex-direction: column;
-  padding:10px;
+  padding: 10px;
   margin: 20px;
 }
 
@@ -383,7 +369,7 @@ textarea.input-field {
   flex-direction: column;
   justify-content: center;
   border: 1px solid black;
-  width:150px;
+  width: 150px;
   padding: 10px;
 }
 
@@ -397,4 +383,30 @@ textarea.input-field {
   margin: 0 10px;
 }
 
-
+/* ----------------------------------Delete Dialog Styling------------------------- */
+#deleteDialog {
+  /* bottom: 30%; */
+  display: none;
+  /* position: sticky; */
+  z-index: 1;
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  width: max-content;
+  height: min-content;
+  overflow: auto;
+  border: 2px solid mediumaquamarine;
+  border-radius: 80px;
+  box-shadow: 0px 5px rgba(20, 100, 10, 0.5);
+  background-color: rgba(59, 202, 78, 0.801);
+}
+#deleteDialog button {
+  margin: 5px;
+  margin-left: 20px;
+  background-color: #c3c4c3;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}

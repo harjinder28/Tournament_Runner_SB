@@ -19,6 +19,8 @@ public interface MatchRepository extends JpaRepository<Match, Integer>{
 	
 	@Transactional
 	public void deleteByTournament(Tournament tournament);
+	@Transactional
+	public void deleteByMatchId(int matchId);
 	
 //	@Transactional
 	public  List<Match> getByTeam1(Team team1);

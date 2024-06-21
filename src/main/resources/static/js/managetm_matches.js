@@ -64,6 +64,8 @@ function generateTournamentBracket(numTeams, type, matches) {
           <div class="teamScore" style="margin-left:10px;">Score-${
             matches[col - 1][1].team2score
           }</div></li><br>`;
+
+          // html += `<button type="button" id="updateMatch" style="margin-top:10px;"><a href="/user/manageTournament/${tid}/updateMatch/${col}/1">Update Match</a></button>`;
           html += `</ul>`;
         }
       }
@@ -85,45 +87,10 @@ function generateTournamentBracket(numTeams, type, matches) {
         html += `<li style="display:inline-flex;"><div class="teamName" style="font-weight: bold;">${match.team1Name}</div><div class="teamScore" style="margin-left:10px;">Score-${match.team1score}</div></li><br>`;
         html += `   VS   <br>`;
         html += `<li style="display:inline-flex;"><div class="teamName" style="font-weight: bold;">${match.team2Name}</div><div class="teamScore" style="margin-left:10px;">Score-${match.team2score}</div></li>`;
+        html += `<li><button type="button" id="updateMatch" style="margin:5px;"><a href="/user/manageTournament/${tid}/updateMatch/${col}/${row}">Update Match</a></button></li>`;
+        html += `<li><form id="form${col}${row}" style="display:inline;" method="post" action="/user/manageTournament/${tid}/deleteMatch/${match.matchId}"><input type="hidden" name="match" value="${match.matchId}"><button id="deleteTournamentButton" name="delete" onclick="deleteConfirmation('form${col}${row}')" value="Delete" style="background-color: red">Delete</button></form></li>`;
         html += `</ul>`;
-      } // else if (
-      //   matches &&
-      //   matches[col - 1] &&
-      //   // matches[col - 1][Math.ceil(row / 2)] &&
-      //   // matches[col - 1][Math.ceil(row / 2) + 1]
-      //   matches[col - 1][row * 2] &&
-      //   matches[col - 1][row * 2 - 1]
-      // ) {
-      //   html += `<ul style="margin:10px 5px;padding-left:10px;border:1px solid black;box-shadow:2px 5px lightgreen;">`;
-      //   if (
-      //     matches[col - 1][row * 2 - 1].team1score >
-      //     matches[col - 1][row * 2 - 1].team2score
-      //   ) {
-      //     html += `<li style="display:inline-flex;"><div class="teamName" style="font-weight: bold;">${
-      //       matches[col - 1][row * 2 - 1].team1Name
-      //     }</div><div class="teamScore" style="margin-left:10px;">Score-${0}</div></li><br>`;
-      //   } else {
-      //     html += `<li style="display:inline-flex;"><div class="teamName" style="font-weight: bold;">${
-      //       matches[col - 1][row * 2 - 1].team2Name
-      //     }</div><div class="teamScore" style="margin-left:10px;">Score-${0}</div></li><br>`;
-      //   }
-
-      //   html += `   VS   <br>`;
-
-      //   if (
-      //     matches[col - 1][row * 2].team1score >
-      //     matches[col - 1][row * 2].team2score
-      //   ) {
-      //     html += `<li style="display:inline-flex;"><div class="teamName" style="font-weight: bold;">${
-      //       matches[col - 1][row * 2].team1Name
-      //     }</div><div class="teamScore" style="margin-left:10px;">Score-${0}</div></li>`;
-      //   } else {
-      //     html += `<li style="display:inline-flex;"><div class="teamName" style="font-weight: bold;">${
-      //       matches[col - 1][row * 2].team2Name
-      //     }</div><div class="teamScore" style="margin-left:10px;">Score-${0}</div></li>`;
-      //   }
-      //   html += `</ul>`;
-      else {
+      } else {
         html += `<ul style="margin:10px 5px;">`;
         html += `<li style="display:inline-flex"><div class="addMatch"><a href="/user/manageTournament/${tid}/addMatch/${col}/${row}"><button type="button" id="addMatch" >Add Match</button>	</a></div></li>`;
         html += `</ul>`;
@@ -158,3 +125,25 @@ function generateTournamentBracket(numTeams, type, matches) {
 //         });
 //     }
 // }
+function deleteConfirmation(formID) {
+  this.addEventListener("click", function (e) {
+    e.preventDefault();
+  });
+  let form = document.getElementById(formID);
+  let dialog = document.getElementById("deleteDialog");
+  dialog.style.display = "block";
+  dialog.showModal();
+
+  var deleteConfirm = document.getElementById("deleteConfirm");
+  deleteConfirm.addEventListener("click", function () {
+    form.submit();
+    dialog.style.display = "none";
+  });
+
+  var close = document.getElementById("close");
+  close.addEventListener("click", function () {
+    let dialog = document.getElementById("deleteDialog");
+    dialog.close();
+    dialog.style.display = "none";
+  });
+}

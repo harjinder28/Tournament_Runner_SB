@@ -60,7 +60,15 @@
 		</section>
     </div>
 
-
+<dialog id="deleteDialog">
+  <form method="dialog" >
+    <p>Are you sure you want to delete?</p>
+    <menu>
+      <button id='close' value="cancel">Cancel!!</button>
+      <button id='deleteConfirm' type="submit" value="submit">Yes!</button>
+    </menu>
+  </form>
+</dialog>
 	<script src="/js/managetm_matches.js" type="text/javascript"></script>
 
 </body>

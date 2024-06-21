@@ -11,7 +11,7 @@
 </head>
 <body>
  <%@include file="/views/Navbar.jsp" %> 
-<form action="/user/manageTournament/${tId}/addMatch" method="post">
+<form action="/user/manageTournament/${tId}/updateMatch/${match.matchId}" method="post">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -29,7 +29,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="matchNumber">Match Number</label> <input type="number"
-                            class="form-control" id="matchNumber" name="matchNumber" value="${match}" readonly>
+                            class="form-control" id="matchNumber" name="matchNumber" value="${matchn}" readonly>
                     </div>
                 </div>
             </div>
@@ -39,27 +39,27 @@
                     <div class="form-group">
                         <label for="team1">Team 1</label> <select class="form-control"
                             id="team1" name="team1">
-                            <option value="">Select Team</option>
+                            <option value="${match.team1.teamId}" selected readonly>${team1Name}</option>
                             <c:forEach var="team" items="${teams}">
                                 <option value="${team.teamId}">${team.teamName}</option>
                             </c:forEach>
                         </select>
                     </div>
                     <label for="team1score">Team 1 Score</label> <input type="text"
-                        class="form-control" id="team1score" name="team1score" >
+                        class="form-control" id="team1score" name="team1score" value="${match.team1score}">
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="team2">Team 2</label> <select class="form-control"
                             id="team2" name="team2">
-                            <option value="">Select Team</option>
+                            <option value="${match.team2.teamId}" selected readonly>${team2Name}</option>
                             <c:forEach var="team" items="${teams}">
                                 <option value="${team.teamId}">${team.teamName}</option>
                             </c:forEach>
                         </select>
                     </div>
                     <label for="team2score">Team 2 Score</label> <input type="text"
-                        class="form-control" id="team2score" name="team2score">
+                        class="form-control" id="team2score" name="team2score" value="${match.team2score}">
                 </div>
             </div>
              </c:if>
@@ -78,7 +78,7 @@
                     <div class="form-group">
                         <label for="team1">Team 1</label> <select class="form-control"
                             id="winnerteam1" name="team1">
-                            <option value="">Select Team</option>
+                            <option value="${match.team1.teamId}" selected readonly>${team1Name}</option>
                             <c:forEach var="team" items="${teams1}">
                                 <option value="${team.teamId}">${team.teamName}</option>
                             </c:forEach>
@@ -90,7 +90,7 @@
                     <div class="form-group">
                         <label for="team2">Team 2</label> <select class="form-control"
                             id="winnerteam2" name="team2">
-                            <option value="">Select Team</option>
+                            <option value="${match.team2.teamId}" selected readonly>${team2Name}</option>
                             <c:forEach var="team" items="${teams2}">
                                 <option value="${team.teamId}">${team.teamName}</option>
                             </c:forEach>
@@ -103,13 +103,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="team1score">Team 1 Score</label> <input type="number"
-                            class="form-control" id="team1score" name="team1score" >
+                            class="form-control" id="team1score" name="team1score" value="${match.team1score}">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="team2score">Team 2 Score</label> <input type="number"
-                            class="form-control" id="team2score" name="team2score">
+                            class="form-control" id="team2score" name="team2score" value="${match.team2score}">
                     </div>
                 </div>
             </div>
@@ -139,13 +139,13 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="team1score">Team 1 Score</label> <input type="number"
-                        class="form-control" id="team1score" name="team1score" >
+                        class="form-control" id="team1score" name="team1score" value="${match.team1score}">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="team2score">Team 2 Score</label> <input type="number"
-                        class="form-control" id="team2score" name="team2score">
+                        class="form-control" id="team2score" name="team2score"value="${match.team2score}">
                 </div>
             </div>
              </c:if>
@@ -155,20 +155,21 @@
                 <div class="col-md-6">
                     <div class="form-group
                         <label for="date">Match Date</label> <input type="date"
-                            class="form-control lastRow" id="date" name="matchDate">
+                            class="form-control lastRow" id="date" name="matchDate" value="${match.matchDate}">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group
                         <label for="time">Match Time</label> <input type="time"
-                            class="form-control lastRow" id="time" name="matchTime">
+                            class="form-control lastRow" id="time" name="matchTime" value="${match.matchTime}">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12" style="text-align:center">
-                    <button type="submit" class="btn btn-primary" >Add Match</button>
+                    <button type="submit" class="btn btn-primary" >Update Match</button>
                 </div>
+                    
             </div>
         </div>
     </form>
